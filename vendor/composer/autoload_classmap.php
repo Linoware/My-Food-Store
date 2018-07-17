@@ -881,6 +881,7 @@ return array(
     'Illuminate\\Database\\Console\\Migrations\\ResetCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Migrations/ResetCommand.php',
     'Illuminate\\Database\\Console\\Migrations\\RollbackCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Migrations/RollbackCommand.php',
     'Illuminate\\Database\\Console\\Migrations\\StatusCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Migrations/StatusCommand.php',
+    'Illuminate\\Database\\Console\\Migrations\\TableGuesser' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Migrations/TableGuesser.php',
     'Illuminate\\Database\\Console\\Seeds\\SeedCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php',
     'Illuminate\\Database\\Console\\Seeds\\SeederMakeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Console/Seeds/SeederMakeCommand.php',
     'Illuminate\\Database\\DatabaseManager' => $vendorDir . '/laravel/framework/src/Illuminate/Database/DatabaseManager.php',

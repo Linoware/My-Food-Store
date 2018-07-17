@@ -73,7 +73,7 @@
                         </v-flex>
                         <v-flex sm4>
                             <span class="addon">watermark</span>
-                            <croppa v-model="myCroppa" :width="image_width" :height="image_height" @file-choose = "onDraw"></croppa>
+                            <croppa v-model="myCroppa" :width="image_width" :height="image_height" @draw = "onDraw"></croppa>
                         </v-flex>
                     </v-container>
 

@@ -74626,7 +74626,7 @@ var render = function() {
                               width: _vm.image_width,
                               height: _vm.image_height
                             },
-                            on: { "file-choose": _vm.onDraw },
+                            on: { draw: _vm.onDraw },
                             model: {
                               value: _vm.myCroppa,
                               callback: function($$v) {
