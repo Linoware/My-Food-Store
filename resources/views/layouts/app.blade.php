@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="default-style" class="default-style layout-fixed layout-navbar-fixed">
+<html lang="en" class="default-style layout-fixed layout-navbar-fixed">
 
 <head>
     <title>Layout 1 - Layouts - Appwork</title>
@@ -31,16 +31,6 @@
 
     <script src="assets/vendor/js/material-ripple.js"></script>
     <script src="assets/vendor/js/layout-helpers.js"></script>
-
-    <!-- Theme settings -->
-    <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section -->
-    <script src="{{ asset('assets/vendor/js/theme-settings.js') }}"></script>
-    <script>
-        window.themeSettings = new ThemeSettings({
-            cssPath: 'assets/vendor/css/rtl/',
-            themesPath: 'assets/vendor/css/rtl/'
-        });
-    </script>
 
     <!-- Core scripts -->
     <script src="{{ asset('assets/vendor/js/pace.js') }}"></script>
@@ -1212,7 +1202,7 @@
                 <!-- Content -->
                 <div class="container-fluid flex-grow-1 container-p-y">
 
-                    @yield('conent')
+                    @yield('content')
 
                 </div>
                 <!-- / Content -->
