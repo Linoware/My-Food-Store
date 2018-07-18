@@ -74291,10 +74291,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            validImage: false,
+            dialog: false,
             valid: false,
             text: 'Form',
             select: 1,
@@ -74318,7 +74367,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             myCroppa: {},
             item_image: '',
             image_width: 250,
-            image_height: 250
+            image_height: 150
         };
     },
 
@@ -74345,9 +74394,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             ctx.restore();
         },
         uploadCroppedImage: function uploadCroppedImage() {
+            var _this = this;
 
             this.myCroppa.generateBlob(function (blob) {
-                alert(URL.createObjectURL(blob));
+
+                var url = URL.createObjectURL(blob);
+
+                _this.item_image = url;
+
+                _this.dialog = !_this.dialog;
             }, 'image/jpeg', 0.8); // 80% compressed jpeg file
         }
     },
@@ -74357,6 +74412,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var vm = this;
 
             vm.selected_item_sizes.push({ text: 'Small', price: 1 });
+        },
+        image_height: function image_height() {
+            if (this.image_height.length == 0) {
+                this.image_height = 1;
+                return false;
+            }
         }
     }
 });
@@ -74398,169 +74459,176 @@ var render = function() {
                     "v-container",
                     [
                       _c(
-                        "v-flex",
-                        { attrs: { sm4: "" } },
+                        "v-layout",
+                        { attrs: { row: "", wrap: "" } },
                         [
-                          _c("v-select", {
-                            attrs: {
-                              items: _vm.items,
-                              rules: [
-                                function(v) {
-                                  return !!v || "Item is required"
+                          _c(
+                            "v-flex",
+                            { attrs: { sm4: "" } },
+                            [
+                              _c("v-select", {
+                                attrs: {
+                                  items: _vm.items,
+                                  rules: [
+                                    function(v) {
+                                      return !!v || "Item is required"
+                                    }
+                                  ],
+                                  label: "Select Item Type",
+                                  required: ""
+                                },
+                                model: {
+                                  value: _vm.select,
+                                  callback: function($$v) {
+                                    _vm.select = $$v
+                                  },
+                                  expression: "select"
                                 }
-                              ],
-                              label: "Select Item Type",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.select,
-                              callback: function($$v) {
-                                _vm.select = $$v
-                              },
-                              expression: "select"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-text-field", {
-                            attrs: {
-                              rules: _vm.nameRules,
-                              counter: 10,
-                              label: "Name",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.name,
-                              callback: function($$v) {
-                                _vm.name = $$v
-                              },
-                              expression: "name"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-select", {
-                            attrs: {
-                              items: _vm.item_sizes,
-                              rules: [
-                                function(v) {
-                                  return !!v || "Item is required"
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: {
+                                  rules: _vm.nameRules,
+                                  counter: 10,
+                                  label: "Name",
+                                  required: ""
+                                },
+                                model: {
+                                  value: _vm.name,
+                                  callback: function($$v) {
+                                    _vm.name = $$v
+                                  },
+                                  expression: "name"
                                 }
-                              ],
-                              label: "Item Size",
-                              required: ""
-                            },
-                            model: {
-                              value: _vm.select_item_size,
-                              callback: function($$v) {
-                                _vm.select_item_size = $$v
-                              },
-                              expression: "select_item_size"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.selected_item_sizes.length > 0
-                            ? _c(
-                                "v-layout",
-                                { attrs: { row: "" } },
-                                [
-                                  _c(
-                                    "v-flex",
-                                    { attrs: { xs12: "", sm8: "" } },
+                              }),
+                              _vm._v(" "),
+                              _c("v-select", {
+                                attrs: {
+                                  items: _vm.item_sizes,
+                                  rules: [
+                                    function(v) {
+                                      return !!v || "Item is required"
+                                    }
+                                  ],
+                                  label: "Item Size",
+                                  required: ""
+                                },
+                                model: {
+                                  value: _vm.select_item_size,
+                                  callback: function($$v) {
+                                    _vm.select_item_size = $$v
+                                  },
+                                  expression: "select_item_size"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.selected_item_sizes.length > 0
+                                ? _c(
+                                    "v-layout",
+                                    { attrs: { row: "" } },
                                     [
                                       _c(
-                                        "v-card",
+                                        "v-flex",
+                                        { attrs: { xs12: "", sm8: "" } },
                                         [
                                           _c(
-                                            "v-list",
-                                            {
-                                              attrs: {
-                                                "two-line": "",
-                                                subheader: ""
-                                              }
-                                            },
+                                            "v-card",
                                             [
-                                              _c("h3", [
-                                                _vm._v("Item Size Selected")
-                                              ]),
-                                              _vm._v(" "),
-                                              _vm._l(
-                                                _vm.selected_item_sizes,
-                                                function(size, s) {
-                                                  return _c(
-                                                    "v-list-tile",
-                                                    {
-                                                      key: s,
-                                                      attrs: { avatar: "" },
-                                                      on: {
-                                                        click: function(
-                                                          $event
-                                                        ) {}
-                                                      }
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "v-list-tile-content",
+                                              _c(
+                                                "v-list",
+                                                {
+                                                  attrs: {
+                                                    "two-line": "",
+                                                    subheader: ""
+                                                  }
+                                                },
+                                                [
+                                                  _c("h3", [
+                                                    _vm._v("Item Size Selected")
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _vm._l(
+                                                    _vm.selected_item_sizes,
+                                                    function(size, s) {
+                                                      return _c(
+                                                        "v-list-tile",
+                                                        {
+                                                          key: s,
+                                                          attrs: { avatar: "" },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {}
+                                                          }
+                                                        },
                                                         [
                                                           _c(
-                                                            "v-list-tile-title",
+                                                            "v-list-tile-content",
                                                             [
-                                                              _vm._v(
-                                                                _vm._s(
-                                                                  size.text
-                                                                )
+                                                              _c(
+                                                                "v-list-tile-title",
+                                                                [
+                                                                  _vm._v(
+                                                                    _vm._s(
+                                                                      size.text
+                                                                    )
+                                                                  )
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-list-tile-sub-title",
+                                                                [
+                                                                  _vm._v(
+                                                                    _vm._s(
+                                                                      size.price
+                                                                    )
+                                                                  )
+                                                                ]
                                                               )
-                                                            ]
+                                                            ],
+                                                            1
                                                           ),
                                                           _vm._v(" "),
                                                           _c(
-                                                            "v-list-tile-sub-title",
-                                                            [
-                                                              _vm._v(
-                                                                _vm._s(
-                                                                  size.price
-                                                                )
-                                                              )
-                                                            ]
-                                                          )
-                                                        ],
-                                                        1
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "v-list-tile-action",
-                                                        [
-                                                          _c(
-                                                            "v-btn",
-                                                            {
-                                                              attrs: {
-                                                                icon: "",
-                                                                ripple: ""
-                                                              },
-                                                              on: {
-                                                                click: function(
-                                                                  $event
-                                                                ) {
-                                                                  $event.stopPropagation()
-                                                                  _vm.selected_item_sizes.splice(
-                                                                    s,
-                                                                    1
-                                                                  )
-                                                                }
-                                                              }
-                                                            },
+                                                            "v-list-tile-action",
                                                             [
                                                               _c(
-                                                                "v-icon",
+                                                                "v-btn",
                                                                 {
                                                                   attrs: {
-                                                                    color:
-                                                                      "grey lighten-1"
+                                                                    icon: "",
+                                                                    ripple: ""
+                                                                  },
+                                                                  on: {
+                                                                    click: function(
+                                                                      $event
+                                                                    ) {
+                                                                      $event.stopPropagation()
+                                                                      _vm.selected_item_sizes.splice(
+                                                                        s,
+                                                                        1
+                                                                      )
+                                                                    }
                                                                   }
                                                                 },
                                                                 [
-                                                                  _vm._v(
-                                                                    "remove_circle"
+                                                                  _c(
+                                                                    "v-icon",
+                                                                    {
+                                                                      attrs: {
+                                                                        color:
+                                                                          "grey lighten-1"
+                                                                      }
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        "remove_circle"
+                                                                      )
+                                                                    ]
                                                                   )
-                                                                ]
+                                                                ],
+                                                                1
                                                               )
                                                             ],
                                                             1
@@ -74568,17 +74636,17 @@ var render = function() {
                                                         ],
                                                         1
                                                       )
-                                                    ],
-                                                    1
-                                                  )
-                                                }
-                                              ),
-                                              _vm._v(" "),
-                                              _c("v-divider", {
-                                                attrs: { inset: "" }
-                                              })
+                                                    }
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("v-divider", {
+                                                    attrs: { inset: "" }
+                                                  })
+                                                ],
+                                                2
+                                              )
                                             ],
-                                            2
+                                            1
                                           )
                                         ],
                                         1
@@ -74586,47 +74654,111 @@ var render = function() {
                                     ],
                                     1
                                   )
-                                ],
-                                1
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { disabled: !_vm.valid },
+                                  on: { click: _vm.submit }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                submit\n                            "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("v-btn", { on: { click: _vm.clear } }, [
+                                _vm._v("clear")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  nativeOn: {
+                                    click: function($event) {
+                                      _vm.dialog = !_vm.dialog
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm.item_image
+                                        ? "Change Image"
+                                        : "Upload Image"
+                                    )
+                                  )
+                                ]
                               )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { disabled: !_vm.valid },
-                              on: { click: _vm.submit }
-                            },
-                            [
-                              _vm._v(
-                                "\n                            submit\n                        "
-                              )
-                            ]
+                            ],
+                            1
                           ),
                           _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            { on: { click: _vm.uploadCroppedImage } },
-                            [_vm._v("clear")]
-                          )
+                          _c("v-flex", { attrs: { sm4: "" } }, [
+                            _c("img", { attrs: { src: _vm.item_image } })
+                          ])
                         ],
                         1
-                      ),
-                      _vm._v(" "),
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { persistent: "", "max-width": "800" },
+          model: {
+            value: _vm.dialog,
+            callback: function($$v) {
+              _vm.dialog = $$v
+            },
+            expression: "dialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [_c("h2", [_vm._v("Upload Image")])]),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _c(
+                "v-card-media",
+                [
+                  _c(
+                    "v-container",
+                    [
                       _c(
-                        "v-flex",
-                        { attrs: { sm4: "" } },
+                        "v-layout",
+                        { attrs: { row: "", wrap: "", "justify-center": "" } },
                         [
-                          _c("span", { staticClass: "addon" }, [
-                            _vm._v("watermark")
-                          ]),
-                          _vm._v(" "),
                           _c("croppa", {
                             attrs: {
-                              width: _vm.image_width,
-                              height: _vm.image_height
+                              width: parseInt(_vm.image_height),
+                              height: parseInt(_vm.image_height),
+                              "prevent-white-space": true
                             },
-                            on: { draw: _vm.onDraw },
+                            on: {
+                              "file-choose": function($event) {
+                                _vm.validImage = true
+                              },
+                              "image-remove": function($event) {
+                                _vm.validImage = false
+                              }
+                            },
                             model: {
                               value: _vm.myCroppa,
                               callback: function($$v) {
@@ -74637,9 +74769,79 @@ var render = function() {
                           })
                         ],
                         1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "", "justify-center": "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { sm12: "" } },
+                            [
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "" } },
+                                [
+                                  _c("v-slider", {
+                                    attrs: {
+                                      disabled: !_vm.validImage,
+                                      max: "500",
+                                      min: "100"
+                                    },
+                                    model: {
+                                      value: _vm.image_height,
+                                      callback: function($$v) {
+                                        _vm.image_height = $$v
+                                      },
+                                      expression: "image_height"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
                       )
                     ],
                     1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card-actions",
+                [
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { flat: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.dialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("Close")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { disabled: !_vm.validImage, flat: "" },
+                      nativeOn: {
+                        click: function($event) {
+                          return _vm.uploadCroppedImage($event)
+                        }
+                      }
+                    },
+                    [_vm._v("OK")]
                   )
                 ],
                 1
