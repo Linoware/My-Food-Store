@@ -10,7 +10,7 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
-    protected $table = 'customer_users';
+    protected $table = 'users';
 
     protected $fillable = [
         'name', 'email', 'password','remember_token'

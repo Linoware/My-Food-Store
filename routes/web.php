@@ -14,7 +14,7 @@
 //    return view('welcome');
 //})->where('any', '.*');
 
-Route::get('/',function(){
-    return view('home');
-});
+
+Route::Auth();
+Route::get('/','AdminController@index');
 
