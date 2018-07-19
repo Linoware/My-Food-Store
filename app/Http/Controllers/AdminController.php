@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('home');
     }
+
+    public function test()
+    {
+        
+    }
 }
