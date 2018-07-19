@@ -11,4 +11,8 @@ Route::group(['prefix' => 'auth'], function ($router) {
 
 });
 
+Route::post('update_customer_profiles', 'CustomerController@updateCustomerProfiles');
+Route::post('upload_image', 'UploadImageController@uploadImage');
+Route::get('home', 'HomeController@index');
+
 Route::resource('customers', 'CustomerController');
