@@ -36,7 +36,7 @@ class ClassNamePassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldRemoveNamespaceDefinition()
     {
@@ -46,7 +46,7 @@ class ClassNamePassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldReplaceNamespaceIfClassNameIsNamespaced()
     {
@@ -57,7 +57,7 @@ class ClassNamePassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldReplaceClassNameWithSpecifiedName()
     {
@@ -67,7 +67,7 @@ class ClassNamePassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldRemoveLeadingBackslashesFromNamespace()
     {

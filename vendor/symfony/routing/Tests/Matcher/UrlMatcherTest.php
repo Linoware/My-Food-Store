@@ -87,7 +87,7 @@ class UrlMatcherTest extends TestCase
 
     public function testMatch()
     {
-        // test the patterns are matched and parameters are returned
+        // banners the patterns are matched and parameters are returned
         $collection = new RouteCollection();
         $collection->add('foo', new Route('/foo/{bar}'));
         $matcher = $this->getUrlMatcher($collection);
@@ -98,13 +98,13 @@ class UrlMatcherTest extends TestCase
         }
         $this->assertEquals(array('_route' => 'foo', 'bar' => 'baz'), $matcher->match('/foo/baz'));
 
-        // test that defaults are merged
+        // banners that defaults are merged
         $collection = new RouteCollection();
         $collection->add('foo', new Route('/foo/{bar}', array('def' => 'test')));
         $matcher = $this->getUrlMatcher($collection);
         $this->assertEquals(array('_route' => 'foo', 'bar' => 'baz', 'def' => 'test'), $matcher->match('/foo/baz'));
 
-        // test that route "method" is ignored if no method is given in the context
+        // banners that route "method" is ignored if no method is given in the context
         $collection = new RouteCollection();
         $collection->add('foo', new Route('/foo', array(), array(), array(), '', array(), array('get', 'head')));
         $matcher = $this->getUrlMatcher($collection);
@@ -249,10 +249,10 @@ class UrlMatcherTest extends TestCase
     {
         $coll = new RouteCollection();
         $coll->add('foo1', new Route('/foo/{a}/{b}'));
-        $coll->add('foo2', new Route('/foo/{a}/test/test/{b}'));
+        $coll->add('foo2', new Route('/foo/{a}/banners/banners/{b}'));
         $coll->add('foo3', new Route('/foo/{a}/{b}/{c}/{d}'));
 
-        $route = $this->getUrlMatcher($coll)->match('/foo/test/test/test/bar')['_route'];
+        $route = $this->getUrlMatcher($coll)->match('/foo/banners/banners/banners/bar')['_route'];
 
         $this->assertEquals('foo2', $route);
     }

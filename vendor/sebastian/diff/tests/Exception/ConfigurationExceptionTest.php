@@ -23,7 +23,7 @@ final class ConfigurationExceptionTest extends TestCase
 
         $this->assertSame(0, $e->getCode());
         $this->assertNull($e->getPrevious());
-        $this->assertSame('Option "test" must be A, got "string#B".', $e->getMessage());
+        $this->assertSame('Option "banners" must be A, got "string#B".', $e->getMessage());
     }
 
     public function testConstruct(): void
@@ -36,6 +36,6 @@ final class ConfigurationExceptionTest extends TestCase
             new \BadMethodCallException(__METHOD__)
         );
 
-        $this->assertSame('Option "test" must be integer, got "SplFileInfo".', $e->getMessage());
+        $this->assertSame('Option "banners" must be integer, got "SplFileInfo".', $e->getMessage());
     }
 }

@@ -35,7 +35,7 @@ class ProjectUrlMatcher extends Symfony\Component\Routing\Matcher\UrlMatcher
                 break;
             default:
                 $routes = array(
-                    '/rootprefix/test' => array(array('_route' => 'static'), null, null, null),
+                    '/rootprefix/banners' => array(array('_route' => 'static'), null, null, null),
                 );
 
                 if (!isset($routes[$pathinfo])) {

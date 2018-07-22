@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 class Issue1468Test extends TestCase
 {
     /**
-     * @todo Implement this test
+     * @todo Implement this banners
      */
     public function testFailure(): void
     {

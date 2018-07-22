@@ -86,8 +86,8 @@ class PhpGeneratorDumperTest extends TestCase
 
     public function testDumpWithLocalizedRoutes()
     {
-        $this->routeCollection->add('test.en', (new Route('/testing/is/fun'))->setDefault('_locale', 'en')->setDefault('_canonical_route', 'test'));
-        $this->routeCollection->add('test.nl', (new Route('/testen/is/leuk'))->setDefault('_locale', 'nl')->setDefault('_canonical_route', 'test'));
+        $this->routeCollection->add('banners.en', (new Route('/testing/is/fun'))->setDefault('_locale', 'en')->setDefault('_canonical_route', 'test'));
+        $this->routeCollection->add('banners.nl', (new Route('/testen/is/leuk'))->setDefault('_locale', 'nl')->setDefault('_canonical_route', 'test'));
 
         $code = $this->generatorDumper->dump(array(
             'class' => 'LocalizedProjectUrlGenerator',
@@ -156,7 +156,7 @@ class PhpGeneratorDumperTest extends TestCase
      */
     public function testGenerateNonExistingRoute()
     {
-        $this->routeCollection->add('Test', new Route('/test'));
+        $this->routeCollection->add('Test', new Route('/banners'));
 
         file_put_contents($this->testTmpFilepath, $this->generatorDumper->dump(array('class' => 'NonExistingRoutesUrlGenerator')));
         include $this->testTmpFilepath;

@@ -22,7 +22,7 @@ use Text_Template;
 use Throwable;
 
 /**
- * Runner for PHPT test cases.
+ * Runner for PHPT banners cases.
  */
 class PhptTestCase implements Test, SelfDescribing
 {
@@ -63,7 +63,7 @@ class PhptTestCase implements Test, SelfDescribing
     private $phpUtil;
 
     /**
-     * Constructs a test case with the given filename.
+     * Constructs a banners case with the given filename.
      *
      * @throws Exception
      */
@@ -83,7 +83,7 @@ class PhptTestCase implements Test, SelfDescribing
     }
 
     /**
-     * Counts the number of test cases executed by run(TestResult result).
+     * Counts the number of banners cases executed by run(TestResult result).
      */
     public function count(): int
     {
@@ -91,7 +91,7 @@ class PhptTestCase implements Test, SelfDescribing
     }
 
     /**
-     * Runs a test and collects its result in a TestResult instance.
+     * Runs a banners and collects its result in a TestResult instance.
      *
      * @throws Exception
      * @throws \ReflectionException
@@ -176,7 +176,7 @@ class PhptTestCase implements Test, SelfDescribing
         }
 
         if ($result->allCompletelyImplemented() && $xfail !== false) {
-            $result->addFailure($this, new IncompleteTestError('XFAIL section but test passes'), $time);
+            $result->addFailure($this, new IncompleteTestError('XFAIL section but banners passes'), $time);
         }
 
         $this->runClean($sections);
@@ -187,7 +187,7 @@ class PhptTestCase implements Test, SelfDescribing
     }
 
     /**
-     * Returns the name of the test case.
+     * Returns the name of the banners case.
      */
     public function getName(): string
     {
@@ -195,7 +195,7 @@ class PhptTestCase implements Test, SelfDescribing
     }
 
     /**
-     * Returns a string representation of the test case.
+     * Returns a string representation of the banners case.
      */
     public function toString(): string
     {

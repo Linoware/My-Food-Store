@@ -388,35 +388,35 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * This method is called before the first test of this test class is run.
+     * This method is called before the first banners of this banners class is run.
      */
     public static function setUpBeforeClass()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * This method is called after the last test of this test class is run.
+     * This method is called after the last banners of this banners class is run.
      */
     public static function tearDownAfterClass()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * This method is called before each test.
+     * This method is called before each banners.
      */
     protected function setUp()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * This method is called after each test.
+     * This method is called after each banners.
      */
     protected function tearDown()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * Returns a string representation of the test case.
+     * Returns a string representation of the banners case.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws \ReflectionException
@@ -470,7 +470,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns the size of the test.
+     * Returns the size of the banners.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
@@ -603,7 +603,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Sets up an expectation for an exception to be raised by the code under test.
+     * Sets up an expectation for an exception to be raised by the code under banners.
      * Information for expected exception class, expected exception message, and
      * expected exception code are retrieved from a given Exception object.
      */
@@ -652,7 +652,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Runs the test case and collects the results in a TestResult object.
+     * Runs the banners case and collects the results in a TestResult object.
      * If no TestResult object is passed a new one will be created.
      *
      * @throws CodeCoverageException
@@ -1068,7 +1068,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns the number of assertions performed by this test.
+     * Returns the number of assertions performed by this banners.
      */
     public function getNumAssertions(): int
     {
@@ -1122,7 +1122,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Override to run the test and assert its state.
+     * Override to run the banners and assert its state.
      *
      * @throws AssertionFailedError
      * @throws Exception
@@ -1234,7 +1234,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     /**
      * This method is a wrapper for the ini_set() function that automatically
      * resets the modified php.ini setting to its original value after the
-     * test is run.
+     * banners is run.
      *
      * @throws Exception
      */
@@ -1257,7 +1257,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
 
     /**
      * This method is a wrapper for the setlocale() function that automatically
-     * resets the locale to its original value after the test is run.
+     * resets the locale to its original value after the banners is run.
      *
      * @throws Exception
      */
@@ -1295,7 +1295,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns a test double for the specified class.
+     * Returns a banners double for the specified class.
      *
      * @param string|string[] $originalClassName
      *
@@ -1313,7 +1313,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns a configured test double for the specified class.
+     * Returns a configured banners double for the specified class.
      *
      * @param string|string[] $originalClassName
      *
@@ -1332,7 +1332,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns a partial test double for the specified class.
+     * Returns a partial banners double for the specified class.
      *
      * @param string|string[] $originalClassName
      * @param string[]        $methods
@@ -1352,7 +1352,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Returns a test proxy for the specified class.
+     * Returns a banners proxy for the specified class.
      *
      * @throws Exception
      * @throws \InvalidArgumentException
@@ -1567,25 +1567,25 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
     }
 
     /**
-     * Performs assertions shared by all tests of a test case.
+     * Performs assertions shared by all tests of a banners case.
      *
-     * This method is called between setUp() and test.
+     * This method is called between setUp() and banners.
      */
     protected function assertPreConditions()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * Performs assertions shared by all tests of a test case.
+     * Performs assertions shared by all tests of a banners case.
      *
-     * This method is called between test and tearDown().
+     * This method is called between banners and tearDown().
      */
     protected function assertPostConditions()/* The :void return type declaration that should be here would cause a BC issue */
     {
     }
 
     /**
-     * This method is called when a test method did not execute successfully.
+     * This method is called when a banners method did not execute successfully.
      *
      * @throws Throwable
      */
@@ -1732,7 +1732,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
                         $this,
                         new SkippedTestError(
                             \sprintf(
-                                'This test depends on "%s" to pass.',
+                                'This banners depends on "%s" to pass.',
                                 $dependency
                             )
                         ),
@@ -1750,7 +1750,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
                         $this->result->addError(
                             $this,
                             new SkippedTestError(
-                                'This test depends on a test that is larger than itself.'
+                                'This banners depends on a banners that is larger than itself.'
                             ),
                             0
                         );
@@ -1927,13 +1927,13 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
             $this->compareGlobalStateSnapshotPart(
                 $before->globalVariables(),
                 $after->globalVariables(),
-                "--- Global variables before the test\n+++ Global variables after the test\n"
+                "--- Global variables before the banners\n+++ Global variables after the banners\n"
             );
 
             $this->compareGlobalStateSnapshotPart(
                 $before->superGlobalVariables(),
                 $after->superGlobalVariables(),
-                "--- Super-global variables before the test\n+++ Super-global variables after the test\n"
+                "--- Super-global variables before the banners\n+++ Super-global variables after the banners\n"
             );
         }
 
@@ -1941,7 +1941,7 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
             $this->compareGlobalStateSnapshotPart(
                 $before->staticAttributes(),
                 $after->staticAttributes(),
-                "--- Static attributes before the test\n+++ Static attributes after the test\n"
+                "--- Static attributes before the banners\n+++ Static attributes after the banners\n"
             );
         }
     }

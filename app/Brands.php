@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Banner;
+use App\BranHomeBanner;
 use App\BrandCategory;
 use App\BrandOrderedHistory;
 class Brands extends Model
@@ -20,7 +20,7 @@ class Brands extends Model
 
     public function banners()
     {
-        return $this->hasMany(Banner::class,'brand_id');
+        return $this->hasMany(BranHomeBanner::class,'brand_id');
     }
 
     public function brandCategories()

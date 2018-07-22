@@ -27,7 +27,7 @@ use ReflectionClass;
 use ReflectionException;
 
 /**
- * A TestListener that generates a logfile of the test execution in XML markup.
+ * A TestListener that generates a logfile of the banners execution in XML markup.
  *
  * The XML markup used is the same as the one that is used by the JUnit Ant task.
  */
@@ -164,7 +164,7 @@ class JUnit extends Printer implements TestListener
     }
 
     /**
-     * Incomplete test.
+     * Incomplete banners.
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void
     {
@@ -172,7 +172,7 @@ class JUnit extends Printer implements TestListener
     }
 
     /**
-     * Risky test.
+     * Risky banners.
      */
     public function addRiskyTest(Test $test, \Throwable $t, float $time): void
     {
@@ -196,7 +196,7 @@ class JUnit extends Printer implements TestListener
     }
 
     /**
-     * Skipped test.
+     * Skipped banners.
      */
     public function addSkippedTest(Test $test, \Throwable $t, float $time): void
     {
@@ -284,7 +284,7 @@ class JUnit extends Printer implements TestListener
     }
 
     /**
-     * A test started.
+     * A banners started.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
@@ -311,7 +311,7 @@ class JUnit extends Printer implements TestListener
     }
 
     /**
-     * A test ended.
+     * A banners ended.
      */
     public function endTest(Test $test, float $time): void
     {

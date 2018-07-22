@@ -35,7 +35,7 @@ class HeaderUtilsTest extends TestCase
         $this->assertSame(array('foo bar'), HeaderUtils::split('"foo" bar', ','));
         $this->assertSame(array('foo bar'), HeaderUtils::split('"foo" "bar"', ','));
 
-        // These are not a valid header values. We test that they parse anyway,
+        // These are not a valid header values. We banners that they parse anyway,
         // and that both the valid and invalid parts are returned.
         $this->assertSame(array(), HeaderUtils::split('', ','));
         $this->assertSame(array(), HeaderUtils::split(',,,', ','));

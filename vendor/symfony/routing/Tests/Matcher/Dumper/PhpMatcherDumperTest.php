@@ -76,7 +76,7 @@ class PhpMatcherDumperTest extends TestCase
 
     public function getRouteCollections()
     {
-        /* test case 1 */
+        /* banners case 1 */
 
         $collection = new RouteCollection();
 
@@ -110,23 +110,23 @@ class PhpMatcherDumperTest extends TestCase
         ));
         // simple
         $collection->add('baz', new Route(
-            '/test/baz'
+            '/banners/baz'
         ));
         // simple with extension
         $collection->add('baz2', new Route(
-            '/test/baz.html'
+            '/banners/baz.html'
         ));
         // trailing slash
         $collection->add('baz3', new Route(
-            '/test/baz3/'
+            '/banners/baz3/'
         ));
         // trailing slash with variable
         $collection->add('baz4', new Route(
-            '/test/{foo}/'
+            '/banners/{foo}/'
         ));
         // trailing slash and method
         $collection->add('baz5', new Route(
-            '/test/{foo}/',
+            '/banners/{foo}/',
             array(),
             array(),
             array(),
@@ -136,7 +136,7 @@ class PhpMatcherDumperTest extends TestCase
         ));
         // complex name
         $collection->add('baz.baz6', new Route(
-            '/test/{foo}/',
+            '/banners/{foo}/',
             array(),
             array(),
             array(),
@@ -272,7 +272,7 @@ class PhpMatcherDumperTest extends TestCase
         $collection1->addPrefix('/a');
         $collection->addCollection($collection1);
 
-        /* test case 2 */
+        /* banners case 2 */
 
         $redirectCollection = clone $collection;
 
@@ -296,17 +296,17 @@ class PhpMatcherDumperTest extends TestCase
             array('http')
         ));
 
-        /* test case 3 */
+        /* banners case 3 */
 
         $rootprefixCollection = new RouteCollection();
-        $rootprefixCollection->add('static', new Route('/test'));
+        $rootprefixCollection->add('static', new Route('/banners'));
         $rootprefixCollection->add('dynamic', new Route('/{var}'));
         $rootprefixCollection->addPrefix('rootprefix');
         $route = new Route('/with-condition');
         $route->setCondition('context.getMethod() == "GET"');
         $rootprefixCollection->add('with-condition', $route);
 
-        /* test case 4 */
+        /* banners case 4 */
         $headMatchCasesCollection = new RouteCollection();
         $headMatchCasesCollection->add('just_head', new Route(
             '/just_head',
@@ -363,7 +363,7 @@ class PhpMatcherDumperTest extends TestCase
             array('PUT', 'GET', 'HEAD')
         ));
 
-        /* test case 5 */
+        /* banners case 5 */
         $groupOptimisedCollection = new RouteCollection();
         $groupOptimisedCollection->add('a_first', new Route('/a/11'));
         $groupOptimisedCollection->add('a_second', new Route('/a/22'));
@@ -381,7 +381,7 @@ class PhpMatcherDumperTest extends TestCase
         $groupOptimisedCollection->add('slashed_b', new Route('/slashed/group/b/'));
         $groupOptimisedCollection->add('slashed_c', new Route('/slashed/group/c/'));
 
-        /* test case 6 & 7 */
+        /* banners case 6 & 7 */
         $trailingSlashCollection = new RouteCollection();
         $trailingSlashCollection->add('simple_trailing_slash_no_methods', new Route('/trailing/simple/no-methods/', array(), array(), array(), '', array(), array()));
         $trailingSlashCollection->add('simple_trailing_slash_GET_method', new Route('/trailing/simple/get-method/', array(), array(), array(), '', array(), array('GET')));
@@ -401,26 +401,26 @@ class PhpMatcherDumperTest extends TestCase
         $trailingSlashCollection->add('regex_not_trailing_slash_HEAD_method', new Route('/not-trailing/regex/head-method/{param}', array(), array(), array(), '', array(), array('HEAD')));
         $trailingSlashCollection->add('regex_not_trailing_slash_POST_method', new Route('/not-trailing/regex/post-method/{param}', array(), array(), array(), '', array(), array('POST')));
 
-        /* test case 8 */
+        /* banners case 8 */
         $unicodeCollection = new RouteCollection();
         $unicodeCollection->add('a', new Route('/{a}', array(), array('a' => 'a'), array('utf8' => false)));
         $unicodeCollection->add('b', new Route('/{a}', array(), array('a' => '.'), array('utf8' => true)));
         $unicodeCollection->add('c', new Route('/{a}', array(), array('a' => '.'), array('utf8' => false)));
 
-        /* test case 9 */
+        /* banners case 9 */
         $hostTreeCollection = new RouteCollection();
         $hostTreeCollection->add('a', (new Route('/'))->setHost('{d}.e.c.b.a'));
         $hostTreeCollection->add('b', (new Route('/'))->setHost('d.c.b.a'));
         $hostTreeCollection->add('c', (new Route('/'))->setHost('{e}.e.c.b.a'));
 
-        /* test case 10 */
+        /* banners case 10 */
         $chunkedCollection = new RouteCollection();
         for ($i = 0; $i < 1000; ++$i) {
             $h = substr(md5($i), 0, 6);
             $chunkedCollection->add('_'.$i, new Route('/'.$h.'/{a}/{b}/{c}/'.$h));
         }
 
-        /* test case 11 */
+        /* banners case 11 */
         $demoCollection = new RouteCollection();
         $demoCollection->add('a', new Route('/admin/post/'));
         $demoCollection->add('b', new Route('/admin/post/new'));
@@ -440,7 +440,7 @@ class PhpMatcherDumperTest extends TestCase
         $demoCollection->addRequirements(array('_locale' => 'en|fr'));
         $demoCollection->addDefaults(array('_locale' => 'en'));
 
-        /* test case 12 */
+        /* banners case 12 */
         $suffixCollection = new RouteCollection();
         $suffixCollection->add('r1', new Route('abc{foo}/1'));
         $suffixCollection->add('r2', new Route('abc{foo}/2'));
@@ -449,7 +449,7 @@ class PhpMatcherDumperTest extends TestCase
         $suffixCollection->add('r100', new Route('abc{foo}/100'));
         $suffixCollection->add('r200', new Route('abc{foo}/200'));
 
-        /* test case 13 */
+        /* banners case 13 */
         $hostCollection = new RouteCollection();
         $hostCollection->add('r1', (new Route('abc{foo}'))->setHost('{foo}.exampple.com'));
         $hostCollection->add('r2', (new Route('abc{foo}'))->setHost('{foo}.exampple.com'));

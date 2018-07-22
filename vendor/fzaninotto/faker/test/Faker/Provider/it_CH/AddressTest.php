@@ -24,7 +24,7 @@ class AddressTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function canton ()
     {
@@ -41,7 +41,7 @@ class AddressTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function cantonName ()
     {
@@ -51,7 +51,7 @@ class AddressTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function cantonShort ()
     {
@@ -61,7 +61,7 @@ class AddressTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function address (){
         $address = $this->faker->address();

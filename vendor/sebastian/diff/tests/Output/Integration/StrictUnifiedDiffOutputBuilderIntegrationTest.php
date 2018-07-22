@@ -44,7 +44,7 @@ final class StrictUnifiedDiffOutputBuilderIntegrationTest extends TestCase
         $this->filePatch = $this->dir . 'diff.patch';
 
         if (!\is_dir($this->dir)) {
-            throw new \RuntimeException('Integration test working directory not found.');
+            throw new \RuntimeException('Integration banners working directory not found.');
         }
 
         $this->cleanUpTempFiles();
@@ -56,12 +56,12 @@ final class StrictUnifiedDiffOutputBuilderIntegrationTest extends TestCase
     }
 
     /**
-     * Integration test
+     * Integration banners
      *
      * - get a file pair
      * - create a `diff` between the files
-     * - test applying the diff using `git apply`
-     * - test applying the diff using `patch`
+     * - banners applying the diff using `git apply`
+     * - banners applying the diff using `patch`
      *
      * @param string $fileFrom
      * @param string $fileTo
@@ -76,7 +76,7 @@ final class StrictUnifiedDiffOutputBuilderIntegrationTest extends TestCase
         $diff = (new Differ(new StrictUnifiedDiffOutputBuilder(['fromFile' => 'Original', 'toFile' => 'New'])))->diff($from, $to);
 
         if ('' === $diff && $from === $to) {
-            // odd case: test after executing as it is more efficient than to read the files and check the contents every time
+            // odd case: banners after executing as it is more efficient than to read the files and check the contents every time
             $this->addToAssertionCount(1);
 
             return;
@@ -86,12 +86,12 @@ final class StrictUnifiedDiffOutputBuilderIntegrationTest extends TestCase
     }
 
     /**
-     * Integration test
+     * Integration banners
      *
      * - get a file pair
      * - create a `diff` between the files
-     * - test applying the diff using `git apply`
-     * - test applying the diff using `patch`
+     * - banners applying the diff using `git apply`
+     * - banners applying the diff using `patch`
      *
      * @param string $fileFrom
      * @param string $fileTo
@@ -106,7 +106,7 @@ final class StrictUnifiedDiffOutputBuilderIntegrationTest extends TestCase
         $diff = (new Differ(new StrictUnifiedDiffOutputBuilder(['fromFile' => 'Original', 'toFile' => 'New'])))->diff($from, $to);
 
         if ('' === $diff && $from === $to) {
-            // odd case: test after executing as it is more efficient than to read the files and check the contents every time
+            // odd case: banners after executing as it is more efficient than to read the files and check the contents every time
             $this->addToAssertionCount(1);
 
             return;

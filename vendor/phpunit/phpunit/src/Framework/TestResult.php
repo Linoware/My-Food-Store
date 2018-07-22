@@ -28,7 +28,7 @@ use SebastianBergmann\Timer\Timer;
 use Throwable;
 
 /**
- * A TestResult collects the results of executing a test case.
+ * A TestResult collects the results of executing a banners case.
  */
 class TestResult implements Countable
 {
@@ -336,7 +336,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Informs the result that a test suite will be started.
+     * Informs the result that a banners suite will be started.
      */
     public function startTestSuite(TestSuite $suite): void
     {
@@ -350,7 +350,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Informs the result that a test suite was completed.
+     * Informs the result that a banners suite was completed.
      */
     public function endTestSuite(TestSuite $suite): void
     {
@@ -360,7 +360,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Informs the result that a test will be started.
+     * Informs the result that a banners will be started.
      */
     public function startTest(Test $test): void
     {
@@ -373,7 +373,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Informs the result that a test was completed.
+     * Informs the result that a banners was completed.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
@@ -400,7 +400,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Returns true if no risky test occurred.
+     * Returns true if no risky banners occurred.
      */
     public function allHarmless(): bool
     {
@@ -416,7 +416,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Returns true if no incomplete test occurred.
+     * Returns true if no incomplete banners occurred.
      */
     public function allCompletelyImplemented(): bool
     {
@@ -448,7 +448,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Returns true if no test has been skipped.
+     * Returns true if no banners has been skipped.
      */
     public function noneSkipped(): bool
     {
@@ -528,7 +528,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Returns the (top) test suite.
+     * Returns the (top) banners suite.
      */
     public function topTestSuite(): TestSuite
     {
@@ -765,7 +765,7 @@ class TestResult implements Countable
                 $this->addFailure(
                     $test,
                     new UnintentionallyCoveredCodeError(
-                        'This test executed code that is not listed as code to be covered or used:' .
+                        'This banners executed code that is not listed as code to be covered or used:' .
                         \PHP_EOL . $cce->getMessage()
                     ),
                     $time
@@ -774,7 +774,7 @@ class TestResult implements Countable
                 $this->addFailure(
                     $test,
                     new CoveredCodeNotExecutedException(
-                        'This test did not execute all the code that is listed as code to be covered:' .
+                        'This banners did not execute all the code that is listed as code to be covered:' .
                         \PHP_EOL . $cce->getMessage()
                     ),
                     $time
@@ -784,7 +784,7 @@ class TestResult implements Countable
                     $this->addFailure(
                         $test,
                         new MissingCoversAnnotationException(
-                            'This test does not have a @covers annotation but is expected to have one'
+                            'This banners does not have a @covers annotation but is expected to have one'
                         ),
                         $time
                     );
@@ -814,7 +814,7 @@ class TestResult implements Countable
             $this->addFailure(
                 $test,
                 new RiskyTestError(
-                    'This test did not perform any assertions'
+                    'This banners did not perform any assertions'
                 ),
                 $time
             );
@@ -824,7 +824,7 @@ class TestResult implements Countable
             $this->addFailure(
                 $test,
                 new RiskyTestError(\sprintf(
-                    'This test is annotated with "@doesNotPerformAssertions" but performed %d assertions',
+                    'This banners is annotated with "@doesNotPerformAssertions" but performed %d assertions',
                     $test->getNumAssertions()
                 )),
                 $time
@@ -834,7 +834,7 @@ class TestResult implements Countable
                 $test,
                 new OutputError(
                     \sprintf(
-                        'This test printed output: %s',
+                        'This banners printed output: %s',
                         $test->getActualOutput()
                     )
                 ),
@@ -866,7 +866,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Checks whether the test run should stop.
+     * Checks whether the banners run should stop.
      */
     public function shouldStop(): bool
     {
@@ -874,7 +874,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Marks that the test run should stop.
+     * Marks that the banners run should stop.
      */
     public function stop(): void
     {
@@ -1020,7 +1020,7 @@ class TestResult implements Countable
     }
 
     /**
-     * Returns whether the entire test was successful or not.
+     * Returns whether the entire banners was successful or not.
      */
     public function wasSuccessful(): bool
     {

@@ -116,7 +116,7 @@ class KernelTest extends TestCase
 
     public function testBootSetsTheBootedFlagToTrue()
     {
-        // use test kernel to access isBooted()
+        // use banners kernel to access isBooted()
         $kernel = $this->getKernelForTest(array('initializeBundles', 'initializeContainer'));
         $kernel->boot();
 
@@ -554,7 +554,7 @@ EOF;
         $kernel = new PassKernel();
         $kernel->boot();
 
-        $this->assertTrue($kernel->getContainer()->getParameter('test.processed'));
+        $this->assertTrue($kernel->getContainer()->getParameter('banners.processed'));
     }
 
     public function testServicesResetter()
@@ -758,6 +758,6 @@ class PassKernel extends CustomProjectDirKernel implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
-        $container->setParameter('test.processed', true);
+        $container->setParameter('banners.processed', true);
     }
 }

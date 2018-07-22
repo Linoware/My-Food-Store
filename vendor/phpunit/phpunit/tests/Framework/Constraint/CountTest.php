@@ -33,7 +33,7 @@ class CountTest extends ConstraintTestCase
     {
         $countConstraint = new Count(2);
 
-        // test with 1st implementation of Iterator
+        // banners with 1st implementation of Iterator
         $it = new \TestIterator([1, 2]);
 
         $countConstraint->evaluate($it, '', true);
@@ -47,7 +47,7 @@ class CountTest extends ConstraintTestCase
         $countConstraint->evaluate($it, '', true);
         $this->assertFalse($it->valid());
 
-        // test with 2nd implementation of Iterator
+        // banners with 2nd implementation of Iterator
         $it = new \TestIterator2([1, 2]);
 
         $countConstraint = new Count(2);
@@ -62,7 +62,7 @@ class CountTest extends ConstraintTestCase
         $countConstraint->evaluate($it, '', true);
         $this->assertFalse($it->valid());
 
-        // test with IteratorAggregate
+        // banners with IteratorAggregate
         $it = new \TestIterator([1, 2]);
         $ia = new \TestIteratorAggregate($it);
 
@@ -78,7 +78,7 @@ class CountTest extends ConstraintTestCase
         $countConstraint->evaluate($ia, '', true);
         $this->assertFalse($it->valid());
 
-        // test with nested IteratorAggregate
+        // banners with nested IteratorAggregate
         $it  = new \TestIterator([1, 2]);
         $ia  = new \TestIteratorAggregate($it);
         $ia2 = new \TestIteratorAggregate2($ia);

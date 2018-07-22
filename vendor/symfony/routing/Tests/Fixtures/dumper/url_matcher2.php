@@ -65,9 +65,9 @@ class ProjectUrlMatcher extends Symfony\Component\Routing\Tests\Fixtures\Redirec
         switch ($pathinfo) {
             default:
                 $routes = array(
-                    '/test/baz' => array(array('_route' => 'baz'), null, null, null),
-                    '/test/baz.html' => array(array('_route' => 'baz2'), null, null, null),
-                    '/test/baz3/' => array(array('_route' => 'baz3'), null, null, null),
+                    '/banners/baz' => array(array('_route' => 'baz'), null, null, null),
+                    '/banners/baz.html' => array(array('_route' => 'baz2'), null, null, null),
+                    '/banners/baz3/' => array(array('_route' => 'baz3'), null, null, null),
                     '/foofoo' => array(array('_route' => 'foofoo', 'def' => 'test'), null, null, null),
                     '/spa ce' => array(array('_route' => 'space'), null, null, null),
                     '/multi/new' => array(array('_route' => 'overridden2'), null, null, null),
@@ -125,7 +125,7 @@ class ProjectUrlMatcher extends Symfony\Component\Routing\Tests\Fixtures\Redirec
                         .'|/([^/]++)(*:69)'
                         .'|head/([^/]++)(*:89)'
                     .')'
-                    .'|/test/([^/]++)/(?'
+                    .'|/banners/([^/]++)/(?'
                         .'|(*:115)'
                     .')'
                     .'|/([\']+)(*:131)'

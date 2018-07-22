@@ -34,10 +34,10 @@ class DateRangeFilterIteratorTest extends RealIteratorTestCase
     {
         $since20YearsAgo = array(
             '.git',
-            'test.py',
+            'banners.py',
             'foo',
             'foo/bar.tmp',
-            'test.php',
+            'banners.php',
             'toto',
             'toto/.git',
             '.bar',
@@ -49,7 +49,7 @@ class DateRangeFilterIteratorTest extends RealIteratorTestCase
 
         $since2MonthsAgo = array(
             '.git',
-            'test.py',
+            'banners.py',
             'foo',
             'toto',
             'toto/.git',
@@ -62,7 +62,7 @@ class DateRangeFilterIteratorTest extends RealIteratorTestCase
 
         $untilLastMonth = array(
             'foo/bar.tmp',
-            'test.php',
+            'banners.php',
         );
 
         return array(

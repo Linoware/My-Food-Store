@@ -43,141 +43,141 @@ class MockingNullableMethodsTest extends MockeryTestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowNonNullableTypeToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullablePrimitive')->andReturn('a string');
         $mock->nonNullablePrimitive();
     }
 
     /**
-     * @test
+     * @banners
      * @expectedException \TypeError
      */
     public function itShouldNotAllowNonNullToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullablePrimitive')->andReturn(null);
         $mock->nonNullablePrimitive();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowPrimitiveNullableToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullablePrimitive')->andReturn(null);
         $mock->nullablePrimitive();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowPrimitiveNullabeToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullablePrimitive')->andReturn('a string');
         $mock->nullablePrimitive();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowSelfToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullableSelf')->andReturn(new MethodWithNullableReturnType());
         $mock->nonNullableSelf();
     }
 
     /**
-     * @test
+     * @banners
      * @expectedException \TypeError
      */
     public function itShouldNotAllowSelfToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullableSelf')->andReturn(null);
         $mock->nonNullableSelf();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowNullableSelfToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullableSelf')->andReturn(new MethodWithNullableReturnType());
         $mock->nullableSelf();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowNullableSelfToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullableSelf')->andReturn(null);
         $mock->nullableSelf();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowClassToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullableClass')->andReturn(new MethodWithNullableReturnType());
         $mock->nonNullableClass();
     }
 
     /**
-     * @test
+     * @banners
      * @expectedException \TypeError
      */
     public function itShouldNotAllowClassToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nonNullableClass')->andReturn(null);
         $mock->nonNullableClass();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowNullalbeClassToBeSet()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullableClass')->andReturn(new MethodWithNullableReturnType());
         $mock->nullableClass();
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAllowNullableClassToBeNull()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithNullableReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithNullableReturnType");
 
         $mock->shouldReceive('nullableClass')->andReturn(null);
         $mock->nullableClass();
     }
 
-    /** @test */
+    /** @banners */
     public function it_allows_returning_null_for_nullable_object_return_types()
     {
         $double= \Mockery::mock(MethodWithNullableReturnType::class);
@@ -187,7 +187,7 @@ class MockingNullableMethodsTest extends MockeryTestCase
         $this->assertNull($double->nullableClass());
     }
 
-    /** @test */
+    /** @banners */
     public function it_allows_returning_null_for_nullable_string_return_types()
     {
         $double= \Mockery::mock(MethodWithNullableReturnType::class);
@@ -197,7 +197,7 @@ class MockingNullableMethodsTest extends MockeryTestCase
         $this->assertNull($double->nullableString());
     }
 
-    /** @test */
+    /** @banners */
     public function it_allows_returning_null_for_nullable_int_return_types()
     {
         $double= \Mockery::mock(MethodWithNullableReturnType::class);
@@ -207,7 +207,7 @@ class MockingNullableMethodsTest extends MockeryTestCase
         $this->assertNull($double->nullableInt());
     }
 
-    /** @test */
+    /** @banners */
     public function it_returns_null_on_calls_to_ignored_methods_of_spies_if_return_type_is_nullable()
     {
         $double = \Mockery::spy(MethodWithNullableReturnType::class);

@@ -42,14 +42,14 @@ class SortableIteratorTest extends RealIteratorTestCase
                     file_get_contents(self::toAbsolute('.bar'));
                     break;
                 case SortableIterator::SORT_BY_CHANGED_TIME:
-                    file_put_contents(self::toAbsolute('test.php'), 'foo');
+                    file_put_contents(self::toAbsolute('banners.php'), 'foo');
                     sleep(1);
-                    file_put_contents(self::toAbsolute('test.py'), 'foo');
+                    file_put_contents(self::toAbsolute('banners.py'), 'foo');
                     break;
                 case SortableIterator::SORT_BY_MODIFIED_TIME:
-                    file_put_contents(self::toAbsolute('test.php'), 'foo');
+                    file_put_contents(self::toAbsolute('banners.php'), 'foo');
                     sleep(1);
-                    file_put_contents(self::toAbsolute('test.py'), 'foo');
+                    file_put_contents(self::toAbsolute('banners.py'), 'foo');
                     break;
             }
         }
@@ -82,8 +82,8 @@ class SortableIteratorTest extends RealIteratorTestCase
             'foo',
             'foo bar',
             'foo/bar.tmp',
-            'test.php',
-            'test.py',
+            'banners.php',
+            'banners.py',
             'toto',
             'toto/.git',
         );
@@ -99,8 +99,8 @@ class SortableIteratorTest extends RealIteratorTestCase
             '.foo/bar',
             'foo bar',
             'foo/bar.tmp',
-            'test.php',
-            'test.py',
+            'banners.php',
+            'banners.py',
         );
 
         $customComparison = array(
@@ -112,22 +112,22 @@ class SortableIteratorTest extends RealIteratorTestCase
             'foo',
             'foo bar',
             'foo/bar.tmp',
-            'test.php',
-            'test.py',
+            'banners.php',
+            'banners.py',
             'toto',
             'toto/.git',
         );
 
         $sortByAccessedTime = array(
             // For these two files the access time was set to 2005-10-15
-            array('foo/bar.tmp', 'test.php'),
+            array('foo/bar.tmp', 'banners.php'),
             // These files were created more or less at the same time
             array(
                 '.git',
                 '.foo',
                 '.foo/.bar',
                 '.foo/bar',
-                'test.py',
+                'banners.py',
                 'foo',
                 'toto',
                 'toto/.git',
@@ -150,8 +150,8 @@ class SortableIteratorTest extends RealIteratorTestCase
                 'toto/.git',
                 'foo bar',
             ),
-            array('test.php'),
-            array('test.py'),
+            array('banners.php'),
+            array('banners.py'),
         );
 
         $sortByModifiedTime = array(
@@ -167,8 +167,8 @@ class SortableIteratorTest extends RealIteratorTestCase
                 'toto/.git',
                 'foo bar',
             ),
-            array('test.php'),
-            array('test.py'),
+            array('banners.php'),
+            array('banners.py'),
         );
 
         return array(

@@ -65,11 +65,11 @@ class UndefinedMethodFatalErrorHandlerTest extends TestCase
             array(
                 array(
                   'type' => 1,
-                  'message' => 'Call to undefined method class@anonymous::test()',
-                  'file' => '/home/possum/work/symfony/test.php',
+                  'message' => 'Call to undefined method class@anonymous::banners()',
+                  'file' => '/home/possum/work/symfony/banners.php',
                   'line' => 11,
                 ),
-                'Attempted to call an undefined method named "test" of class "class@anonymous".',
+                'Attempted to call an undefined method named "banners" of class "class@anonymous".',
             ),
         );
     }

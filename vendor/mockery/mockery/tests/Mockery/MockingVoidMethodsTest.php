@@ -34,18 +34,18 @@ class MockingVoidMethodsTest extends MockeryTestCase
     }
 
 
-    /** @test */
+    /** @banners */
     public function itShouldSuccessfullyBuildTheMock()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithVoidReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithVoidReturnType");
 
         $this->assertInstanceOf(\test\Mockery\Fixtures\MethodWithVoidReturnType::class, $mock);
     }
 
-    /** @test */
+    /** @banners */
     public function it_can_stub_and_mock_void_methods()
     {
-        $mock = mock("test\Mockery\Fixtures\MethodWithVoidReturnType");
+        $mock = mock("banners\Mockery\Fixtures\MethodWithVoidReturnType");
 
         $mock->shouldReceive("foo");
         $mock->foo();

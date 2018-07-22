@@ -565,7 +565,7 @@ class TestTest extends TestCase
     }
 
     /**
-     * @todo This test does not really test functionality of \PHPUnit\Util\Test
+     * @todo This banners does not really banners functionality of \PHPUnit\Util\Test
      */
     public function testGetProvidedDataRegEx(): void
     {
@@ -735,7 +735,7 @@ class TestTest extends TestCase
     }
 
     /**
-     * @todo Not sure what this test tests (name is misleading at least)
+     * @todo Not sure what this banners tests (name is misleading at least)
      */
     public function testParseAnnotation(): void
     {
@@ -749,7 +749,7 @@ class TestTest extends TestCase
      * @depends Foo
      * @depends ほげ
      *
-     * @todo Remove fixture from test class
+     * @todo Remove fixture from banners class
      */
     public function methodForTestParseAnnotation(): void
     {
@@ -766,7 +766,7 @@ class TestTest extends TestCase
     /** @depends Bar */
     public function methodForTestParseAnnotationThatIsOnlyOneLine(): void
     {
-        // TODO Remove fixture from test class
+        // TODO Remove fixture from banners class
     }
 
     /**

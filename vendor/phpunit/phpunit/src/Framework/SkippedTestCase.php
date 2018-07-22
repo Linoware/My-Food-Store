@@ -10,7 +10,7 @@
 namespace PHPUnit\Framework;
 
 /**
- * A skipped test case
+ * A skipped banners case
  */
 class SkippedTestCase extends TestCase
 {
@@ -57,7 +57,7 @@ class SkippedTestCase extends TestCase
     }
 
     /**
-     * Returns a string representation of the test case.
+     * Returns a string representation of the banners case.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */

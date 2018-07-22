@@ -21,7 +21,7 @@ class TextTest extends TestCase
         return $method;
     }
 
-    /** @test */
+    /** @banners */
     function testItShouldExplodeTheStringToArray()
     {
         $this->assertSame(
@@ -35,7 +35,7 @@ class TextTest extends TestCase
         );
     }
 
-    /** @test */
+    /** @banners */
     function testItShouldReturnTheStringLength()
     {
         $this->assertContains(
@@ -44,7 +44,7 @@ class TextTest extends TestCase
         );
     }
 
-    /** @test */
+    /** @banners */
     function testItShouldReturnTheCharacterIsValidStartOrNot()
     {
         $this->assertTrue($this->getMethod('validStart')->invokeArgs(null, array('中')));
@@ -58,7 +58,7 @@ class TextTest extends TestCase
         $this->assertFalse($this->getMethod('validStart')->invokeArgs(null, array('！')));
     }
 
-    /** @test */
+    /** @banners */
     function testItShouldAppendEndPunctToTheEndOfString()
     {
         $this->assertSame(

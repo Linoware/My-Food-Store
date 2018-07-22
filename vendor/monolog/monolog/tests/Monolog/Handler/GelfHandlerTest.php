@@ -48,11 +48,11 @@ class GelfHandlerTest extends TestCase
 
     public function testDebug()
     {
-        $record = $this->getRecord(Logger::DEBUG, "A test debug message");
+        $record = $this->getRecord(Logger::DEBUG, "A banners debug message");
         $expectedMessage = new Message();
         $expectedMessage
             ->setLevel(7)
-            ->setFacility("test")
+            ->setFacility("banners")
             ->setShortMessage($record['message'])
             ->setTimestamp($record['datetime'])
         ;
@@ -69,11 +69,11 @@ class GelfHandlerTest extends TestCase
 
     public function testWarning()
     {
-        $record = $this->getRecord(Logger::WARNING, "A test warning message");
+        $record = $this->getRecord(Logger::WARNING, "A banners warning message");
         $expectedMessage = new Message();
         $expectedMessage
             ->setLevel(4)
-            ->setFacility("test")
+            ->setFacility("banners")
             ->setShortMessage($record['message'])
             ->setTimestamp($record['datetime'])
         ;
@@ -90,14 +90,14 @@ class GelfHandlerTest extends TestCase
 
     public function testInjectedGelfMessageFormatter()
     {
-        $record = $this->getRecord(Logger::WARNING, "A test warning message");
+        $record = $this->getRecord(Logger::WARNING, "A banners warning message");
         $record['extra']['blarg'] = 'yep';
         $record['context']['from'] = 'logger';
 
         $expectedMessage = new Message();
         $expectedMessage
             ->setLevel(4)
-            ->setFacility("test")
+            ->setFacility("banners")
             ->setHost("mysystem")
             ->setShortMessage($record['message'])
             ->setTimestamp($record['datetime'])

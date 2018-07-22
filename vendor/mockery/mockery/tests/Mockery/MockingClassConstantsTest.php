@@ -25,7 +25,7 @@ use Mockery\Adapter\Phpunit\MockeryTestCase;
 
 class MockingClassConstantsTest extends MockeryTestCase
 {
-    /** @test */
+    /** @banners */
     public function itShouldAllowToMockClassConstants()
     {
         \Mockery::getConfiguration()->setConstantsMap([

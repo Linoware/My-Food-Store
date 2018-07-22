@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Modules\JsonResponseFormat;
+use App\Banner;
+use App\Restaurant;
+use App\BrandCategory;
 
 class HomeController extends Controller
 {
@@ -26,74 +29,22 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
+
         $data['banner'] = array(
             'id' => 1,
-            'section_title' => 'Banner',
-            'data' => [
-                array(
-                    'id' => 2,
-                    'title' => 'title',
-                    'image' => 'image1',
-                    'description' => ''
-                )
-            ],
-            'has_more' => true
-        );
-        $data['brands_categories'] = array(
-          'id' => 2,
-          'section_title' => 'Brands Categories',
-          'data' => [
-              array(
-                  'id' => 1,
-                  'title' => 'title',
-                  'image' => 'image1',
-                  'description' => ''
-              )
-            ],
-            'has_more' => true
+            'section_title' => 'Bran Home Banner'
         );
 
-        $data['recommended_restaurants'] = array(
-            'id' => 3,
-            'section_title' => 'Recommended Restaurants',
-            'data' => [
-                array(
-                    'id' => 1,
-                    'title' => 'title',
-                    'image' => 'image1',
-                    'description' => ''
-                )
-            ],
-            'has_more' => true
+        $data['banner']['data'] = Banner::all();
+
+        $data['brand_categories'] = array(
+            'id' => 2,
+            'section_title' => 'Brands Categories'
         );
 
-        $data['recommended_foods'] = array(
-            'id' => 4,
-            'section_title' => 'Recommended Food',
-            'data' => [
-                array(
-                    'id' => 1,
-                    'title' => 'title',
-                    'image' => 'image1',
-                    'description' => ''
-                )
-            ],
-            'has_more' => true
-        );
-
-        $data['brands_ordered_history'] = array(
-            'id' => 5,
-            'section_title' => 'Brand Ordered History',
-            'data' => [
-                array(
-                    'id' => 1,
-                    'title' => 'title',
-                    'image' => 'image1',
-                    'description' => ''
-                )
-            ],
-            'has_more' => true
-        );
+        $data['brand_categories']['data'] = BrandCategory::all();
 
         $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'request success'], $data);
 

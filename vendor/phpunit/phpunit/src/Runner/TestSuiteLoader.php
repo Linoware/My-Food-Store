@@ -12,7 +12,7 @@ namespace PHPUnit\Runner;
 use ReflectionClass;
 
 /**
- * An interface to define how a test suite should be loaded.
+ * An interface to define how a banners suite should be loaded.
  */
 interface TestSuiteLoader
 {

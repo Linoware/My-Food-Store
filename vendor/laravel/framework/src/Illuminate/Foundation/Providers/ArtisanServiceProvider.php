@@ -157,7 +157,7 @@ class ArtisanServiceProvider extends ServiceProvider
         'SeederMake' => 'command.seeder.make',
         'SessionTable' => 'command.session.table',
         'Serve' => 'command.serve',
-        'TestMake' => 'command.test.make',
+        'TestMake' => 'command.banners.make',
         'VendorPublish' => 'command.vendor.publish',
     ];
 
@@ -930,7 +930,7 @@ class ArtisanServiceProvider extends ServiceProvider
      */
     protected function registerTestMakeCommand()
     {
-        $this->app->singleton('command.test.make', function ($app) {
+        $this->app->singleton('command.banners.make', function ($app) {
             return new TestMakeCommand($app['files']);
         });
     }

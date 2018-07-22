@@ -95,42 +95,42 @@ class XmlResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Incomplete test.
+     * Incomplete banners.
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void
     {
     }
 
     /**
-     * Risky test.
+     * Risky banners.
      */
     public function addRiskyTest(Test $test, \Throwable $t, float $time): void
     {
     }
 
     /**
-     * Skipped test.
+     * Skipped banners.
      */
     public function addSkippedTest(Test $test, \Throwable $t, float $time): void
     {
     }
 
     /**
-     * A test suite started.
+     * A banners suite started.
      */
     public function startTestSuite(TestSuite $suite): void
     {
     }
 
     /**
-     * A test suite ended.
+     * A banners suite ended.
      */
     public function endTestSuite(TestSuite $suite): void
     {
     }
 
     /**
-     * A test started.
+     * A banners started.
      */
     public function startTest(Test $test): void
     {
@@ -138,7 +138,7 @@ class XmlResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * A test ended.
+     * A banners ended.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */

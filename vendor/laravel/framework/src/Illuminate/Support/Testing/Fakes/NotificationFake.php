@@ -18,7 +18,7 @@ class NotificationFake implements NotificationFactory, NotificationDispatcher
     protected $notifications = [];
 
     /**
-     * Assert if a notification was sent based on a truth-test callback.
+     * Assert if a notification was sent based on a truth-banners callback.
      *
      * @param  mixed  $notifiable
      * @param  string  $notification
@@ -62,7 +62,7 @@ class NotificationFake implements NotificationFactory, NotificationDispatcher
     }
 
     /**
-     * Determine if a notification was sent based on a truth-test callback.
+     * Determine if a notification was sent based on a truth-banners callback.
      *
      * @param  mixed  $notifiable
      * @param  string  $notification
@@ -117,7 +117,7 @@ class NotificationFake implements NotificationFactory, NotificationDispatcher
     }
 
     /**
-     * Get all of the notifications matching a truth-test callback.
+     * Get all of the notifications matching a truth-banners callback.
      *
      * @param  mixed  $notifiable
      * @param  string  $notification

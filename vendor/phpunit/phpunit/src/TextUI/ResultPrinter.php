@@ -222,7 +222,7 @@ class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Incomplete test.
+     * Incomplete banners.
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void
     {
@@ -231,7 +231,7 @@ class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Risky test.
+     * Risky banners.
      */
     public function addRiskyTest(Test $test, \Throwable $t, float $time): void
     {
@@ -240,7 +240,7 @@ class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Skipped test.
+     * Skipped banners.
      */
     public function addSkippedTest(Test $test, \Throwable $t, float $time): void
     {
@@ -268,7 +268,7 @@ class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * A test started.
+     * A banners started.
      */
     public function startTest(Test $test): void
     {
@@ -283,7 +283,7 @@ class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * A test ended.
+     * A banners ended.
      */
     public function endTest(Test $test, float $time): void
     {
@@ -392,17 +392,17 @@ class ResultPrinter extends Printer implements TestListener
 
     protected function printIncompletes(TestResult $result): void
     {
-        $this->printDefects($result->notImplemented(), 'incomplete test');
+        $this->printDefects($result->notImplemented(), 'incomplete banners');
     }
 
     protected function printRisky(TestResult $result): void
     {
-        $this->printDefects($result->risky(), 'risky test');
+        $this->printDefects($result->risky(), 'risky banners');
     }
 
     protected function printSkipped(TestResult $result): void
     {
-        $this->printDefects($result->skipped(), 'skipped test');
+        $this->printDefects($result->skipped(), 'skipped banners');
     }
 
     protected function printHeader(): void
@@ -428,7 +428,7 @@ class ResultPrinter extends Printer implements TestListener
             $this->writeWithColor(
                 'fg-black, bg-green',
                 \sprintf(
-                    'OK (%d test%s, %d assertion%s)',
+                    'OK (%d banners%s, %d assertion%s)',
                     \count($result),
                     (\count($result) == 1) ? '' : 's',
                     $this->numAssertions,

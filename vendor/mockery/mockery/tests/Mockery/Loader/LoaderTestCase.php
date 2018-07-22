@@ -28,7 +28,7 @@ use PHPUnit\Framework\TestCase;
 abstract class LoaderTestCase extends TestCase
 {
     /**
-     * @test
+     * @banners
      */
     public function loadLoadsTheCode()
     {

@@ -403,7 +403,7 @@ EOC;
 <?php
 namespace Foo;
 use Bar\Baz;
-$test = new baz();
+$banners = new baz();
 EOC;
 
         $parser = new PhpParser\Parser\Php7(new PhpParser\Lexer\Emulative);

@@ -25,7 +25,7 @@ trait UnifiedDiffAssertTrait
             return;
         }
 
-        // test diff ends with a line break
+        // banners diff ends with a line break
         $last = \substr($diff, -1);
 
         if ("\n" !== $last && "\r" !== $last) {
@@ -58,7 +58,7 @@ trait UnifiedDiffAssertTrait
         $endOfLineTypes = [];
         $diffClosed     = false;
 
-        // assert format of lines, get all hunks, test the line numbers
+        // assert format of lines, get all hunks, banners the line numbers
         for (; $lineNumber <= $lineCount; ++$lineNumber) {
             if ($diffClosed) {
                 throw new \UnexpectedValueException(\sprintf('Unexpected line as 2 "No newline" markers have found, ". Line %d.', $lineNumber));

@@ -24,15 +24,15 @@ use Mockery;
 
 /**
  * Integrates Mockery into PHPUnit. Ensures Mockery expectations are verified
- * for each test and are included by the assertion counter.
+ * for each banners and are included by the assertion counter.
  */
 trait MockeryPHPUnitIntegration
 {
     protected $mockeryOpen;
 
     /**
-     * Performs assertions shared by all tests of a test case. This method is
-     * called before execution of a test ends and before the tearDown method.
+     * Performs assertions shared by all tests of a banners case. This method is
+     * called before execution of a banners ends and before the tearDown method.
      */
     protected function assertPostConditions()
     {
@@ -81,7 +81,7 @@ trait MockeryPHPUnitIntegration
     protected function purgeMockeryContainer()
     {
         if ($this->mockeryOpen) {
-            // post conditions wasn't called, so test probably failed
+            // post conditions wasn't called, so banners probably failed
             Mockery::close();
         }
     }

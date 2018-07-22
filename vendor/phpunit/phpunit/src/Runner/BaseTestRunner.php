@@ -17,7 +17,7 @@ use ReflectionException;
 use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
 
 /**
- * Base class for all test runners.
+ * Base class for all banners runners.
  */
 abstract class BaseTestRunner
 {
@@ -139,7 +139,7 @@ abstract class BaseTestRunner
 
     /**
      * Override to define how to handle a failed loading of
-     * a test suite.
+     * a banners suite.
      */
     abstract protected function runFailed(string $message);
 }

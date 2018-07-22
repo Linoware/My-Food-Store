@@ -29,8 +29,8 @@ use PHPUnit\Runner\BaseTestRunner;
 class TestListener extends BaseTestListener
 {
     /**
-     * endTest is called after each test and checks if \Mockery::close() has
-     * been called, and will let the test fail if it hasn't.
+     * endTest is called after each banners and checks if \Mockery::close() has
+     * been called, and will let the banners fail if it hasn't.
      *
      * @param Test  $test
      * @param float $time
@@ -44,7 +44,7 @@ class TestListener extends BaseTestListener
         }
 
         if ($test->getStatus() !== BaseTestRunner::STATUS_PASSED) {
-            // If the test didn't pass there is no guarantee that
+            // If the banners didn't pass there is no guarantee that
             // verifyMockObjects and assertPostConditions have been called.
             // And even if it did, the point here is to prevent false
             // negatives, not to make failing tests fail for more reasons.
@@ -61,7 +61,7 @@ class TestListener extends BaseTestListener
 
         $e = new ExpectationFailedException(
             sprintf(
-                "Mockery's expectations have not been verified. Make sure that \Mockery::close() is called at the end of the test. Consider using %s\MockeryPHPUnitIntegration or extending %s\MockeryTestCase.",
+                "Mockery's expectations have not been verified. Make sure that \Mockery::close() is called at the end of the banners. Consider using %s\MockeryPHPUnitIntegration or extending %s\MockeryTestCase.",
                 __NAMESPACE__,
                 __NAMESPACE__
             )

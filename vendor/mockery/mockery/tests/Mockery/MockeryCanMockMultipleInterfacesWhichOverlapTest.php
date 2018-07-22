@@ -25,7 +25,7 @@ use Mockery\Adapter\Phpunit\MockeryTestCase;
 
 class GeneratorTest extends MockeryTestCase
 {
-    /** @test */
+    /** @banners */
     public function shouldNotDuplicateDoublyInheritedMethods()
     {
         $container = new \Mockery\Container;

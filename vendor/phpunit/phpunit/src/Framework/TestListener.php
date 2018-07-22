@@ -10,7 +10,7 @@
 namespace PHPUnit\Framework;
 
 /**
- * A Listener for test progress.
+ * A Listener for banners progress.
  */
 interface TestListener
 {
@@ -30,37 +30,37 @@ interface TestListener
     public function addFailure(Test $test, AssertionFailedError $e, float $time): void;
 
     /**
-     * Incomplete test.
+     * Incomplete banners.
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void;
 
     /**
-     * Risky test.
+     * Risky banners.
      */
     public function addRiskyTest(Test $test, \Throwable $t, float $time): void;
 
     /**
-     * Skipped test.
+     * Skipped banners.
      */
     public function addSkippedTest(Test $test, \Throwable $t, float $time): void;
 
     /**
-     * A test suite started.
+     * A banners suite started.
      */
     public function startTestSuite(TestSuite $suite): void;
 
     /**
-     * A test suite ended.
+     * A banners suite ended.
      */
     public function endTestSuite(TestSuite $suite): void;
 
     /**
-     * A test started.
+     * A banners started.
      */
     public function startTest(Test $test): void;
 
     /**
-     * A test ended.
+     * A banners ended.
      */
     public function endTest(Test $test, float $time): void;
 }

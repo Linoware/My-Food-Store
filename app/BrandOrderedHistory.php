@@ -18,6 +18,6 @@ class BrandOrderedHistory extends Model
 
     public function brands()
     {
-        return $this->belongsTo(Banner::class,'brand_id');
+        return $this->belongsTo(BranHomeBanner::class,'brand_id');
     }
 }

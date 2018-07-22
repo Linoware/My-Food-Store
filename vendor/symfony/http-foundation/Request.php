@@ -1496,7 +1496,7 @@ class Request
                 return $this->content;
             }
 
-            // Content passed in parameter (test)
+            // Content passed in parameter (banners)
             if (is_string($this->content)) {
                 $resource = fopen('php://temp', 'r+');
                 fwrite($resource, $this->content);

@@ -20,7 +20,7 @@ class BuilderFactoryTest extends TestCase
      */
     public function testFactory($methodName, $className) {
         $factory = new BuilderFactory;
-        $this->assertInstanceOf($className, $factory->$methodName('test'));
+        $this->assertInstanceOf($className, $factory->$methodName('banners'));
     }
 
     public function provideTestFactory() {
@@ -267,7 +267,7 @@ abstract class SomeClass extends SomeOtherClass implements A\Few, \Interfaces
      * @param SomeClass And takes a parameter
      */
     public abstract function someMethod(SomeClass $someParam);
-    protected function anotherMethod($someParam = 'test')
+    protected function anotherMethod($someParam = 'banners')
     {
         print $someParam;
     }

@@ -13,6 +13,6 @@ class TestSkipped extends TestCase
 {
     protected function runTest(): void
     {
-        $this->markTestSkipped('Skipped test');
+        $this->markTestSkipped('Skipped banners');
     }
 }

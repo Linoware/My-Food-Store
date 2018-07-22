@@ -38,7 +38,7 @@ class ExecutableFinderTest extends TestCase
     public function testFind()
     {
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
 
         $this->setPath(dirname(PHP_BINARY));
@@ -52,7 +52,7 @@ class ExecutableFinderTest extends TestCase
     public function testFindWithDefault()
     {
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
 
         $expected = 'defaultValue';
@@ -68,7 +68,7 @@ class ExecutableFinderTest extends TestCase
     public function testFindWithExtraDirs()
     {
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
 
         $this->setPath('');
@@ -84,11 +84,11 @@ class ExecutableFinderTest extends TestCase
     public function testFindWithOpenBaseDir()
     {
         if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('Cannot run test on windows');
+            $this->markTestSkipped('Cannot run banners on windows');
         }
 
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
 
         $this->iniSet('open_basedir', dirname(PHP_BINARY).PATH_SEPARATOR.'/');
@@ -102,10 +102,10 @@ class ExecutableFinderTest extends TestCase
     public function testFindProcessInOpenBasedir()
     {
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
         if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('Cannot run test on windows');
+            $this->markTestSkipped('Cannot run banners on windows');
         }
 
         $this->setPath('');
@@ -123,7 +123,7 @@ class ExecutableFinderTest extends TestCase
     public function testFindBatchExecutableOnWindows()
     {
         if (ini_get('open_basedir')) {
-            $this->markTestSkipped('Cannot test when open_basedir is set');
+            $this->markTestSkipped('Cannot banners when open_basedir is set');
         }
         if ('\\' !== DIRECTORY_SEPARATOR) {
             $this->markTestSkipped('Can be only tested on windows');

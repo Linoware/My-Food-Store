@@ -274,12 +274,12 @@ class ShellTest extends \PHPUnit\Framework\TestCase
     public function testClosuresSupport()
     {
         $shell = new Shell($this->getConfig());
-        $code = '$test = function () {}';
+        $code = '$banners = function () {}';
         $shell->addCode($code);
         $shell->flushCode();
-        $code = '$test()';
+        $code = '$banners()';
         $shell->addCode($code);
-        $this->assertSame($shell->flushCode(), 'return $test();');
+        $this->assertSame($shell->flushCode(), 'return $banners();');
     }
 
     public function testWriteStdout()

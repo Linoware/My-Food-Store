@@ -13,7 +13,7 @@ class Issue1348Test extends TestCase
 {
     public function testSTDOUT(): void
     {
-        \fwrite(\STDOUT, "\nSTDOUT does not break test result\n");
+        \fwrite(\STDOUT, "\nSTDOUT does not break banners result\n");
         $this->assertTrue(true);
     }
 

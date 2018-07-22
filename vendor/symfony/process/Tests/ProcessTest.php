@@ -55,20 +55,20 @@ class ProcessTest extends TestCase
     {
         try {
             // Check that it works fine if the CWD exists
-            $cmd = new Process('echo test', __DIR__);
+            $cmd = new Process('echo banners', __DIR__);
             $cmd->run();
         } catch (\Exception $e) {
             $this->fail($e);
         }
 
-        $cmd = new Process('echo test', __DIR__.'/notfound/');
+        $cmd = new Process('echo banners', __DIR__.'/notfound/');
         $cmd->run();
     }
 
     public function testThatProcessDoesNotThrowWarningDuringRun()
     {
         if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('This test is transient on Windows');
+            $this->markTestSkipped('This banners is transient on Windows');
         }
         @trigger_error('Test Error', E_USER_NOTICE);
         $process = $this->getProcessForCode('sleep(3)');
@@ -491,7 +491,7 @@ class ProcessTest extends TestCase
     public function testTTYInWindowsEnvironment()
     {
         if ('\\' !== DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('This test is for Windows platform only');
+            $this->markTestSkipped('This banners is for Windows platform only');
         }
 
         $process = $this->getProcess('echo "foo" >> /dev/null');

@@ -13,7 +13,7 @@ use PHPUnit\Framework\Error\Error;
 use Throwable;
 
 /**
- * A TestFailure collects a failed test together with the caught exception.
+ * A TestFailure collects a failed banners together with the caught exception.
  */
 class TestFailure
 {
@@ -65,7 +65,7 @@ class TestFailure
     }
 
     /**
-     * Constructs a TestFailure with the given test and exception.
+     * Constructs a TestFailure with the given banners and exception.
      *
      * @param Throwable $t
      */
@@ -107,7 +107,7 @@ class TestFailure
     }
 
     /**
-     * Returns the name of the failing test (including data set, if any).
+     * Returns the name of the failing banners (including data set, if any).
      */
     public function getTestName(): string
     {
@@ -115,9 +115,9 @@ class TestFailure
     }
 
     /**
-     * Returns the failing test.
+     * Returns the failing banners.
      *
-     * Note: The test object is not set when the test is executed in process
+     * Note: The banners object is not set when the banners is executed in process
      * isolation.
      *
      * @see Exception

@@ -82,7 +82,7 @@ var toString = Object.prototype.toString;
 /**
  * Determine if a value is an Array
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is an Array, otherwise false
  */
 function isArray(val) {
@@ -92,7 +92,7 @@ function isArray(val) {
 /**
  * Determine if a value is an ArrayBuffer
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is an ArrayBuffer, otherwise false
  */
 function isArrayBuffer(val) {
@@ -102,7 +102,7 @@ function isArrayBuffer(val) {
 /**
  * Determine if a value is a FormData
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is an FormData, otherwise false
  */
 function isFormData(val) {
@@ -112,7 +112,7 @@ function isFormData(val) {
 /**
  * Determine if a value is a view on an ArrayBuffer
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
  */
 function isArrayBufferView(val) {
@@ -128,7 +128,7 @@ function isArrayBufferView(val) {
 /**
  * Determine if a value is a String
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a String, otherwise false
  */
 function isString(val) {
@@ -138,7 +138,7 @@ function isString(val) {
 /**
  * Determine if a value is a Number
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a Number, otherwise false
  */
 function isNumber(val) {
@@ -148,7 +148,7 @@ function isNumber(val) {
 /**
  * Determine if a value is undefined
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if the value is undefined, otherwise false
  */
 function isUndefined(val) {
@@ -158,7 +158,7 @@ function isUndefined(val) {
 /**
  * Determine if a value is an Object
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is an Object, otherwise false
  */
 function isObject(val) {
@@ -168,7 +168,7 @@ function isObject(val) {
 /**
  * Determine if a value is a Date
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a Date, otherwise false
  */
 function isDate(val) {
@@ -178,7 +178,7 @@ function isDate(val) {
 /**
  * Determine if a value is a File
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a File, otherwise false
  */
 function isFile(val) {
@@ -188,7 +188,7 @@ function isFile(val) {
 /**
  * Determine if a value is a Blob
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a Blob, otherwise false
  */
 function isBlob(val) {
@@ -198,7 +198,7 @@ function isBlob(val) {
 /**
  * Determine if a value is a Function
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a Function, otherwise false
  */
 function isFunction(val) {
@@ -208,7 +208,7 @@ function isFunction(val) {
 /**
  * Determine if a value is a Stream
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a Stream, otherwise false
  */
 function isStream(val) {
@@ -218,7 +218,7 @@ function isStream(val) {
 /**
  * Determine if a value is a URLSearchParams object
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to banners
  * @returns {boolean} True if value is a URLSearchParams object, otherwise false
  */
 function isURLSearchParams(val) {
@@ -1132,7 +1132,7 @@ if (inBrowser) {
         supportsPassive = true;
       }
     })); // https://github.com/facebook/flow/issues/285
-    window.addEventListener('test-passive', null, opts);
+    window.addEventListener('banners-passive', null, opts);
   } catch (e) {}
 }
 
@@ -7377,12 +7377,12 @@ function genAssignmentCode (
  *
  * Possible cases:
  *
- * - test
- * - test[key]
- * - test[test1[key]]
- * - test["a"][key]
- * - xxx.test[a[a].test1[key]]
- * - test.xxx.a["asa"][test1[key]]
+ * - banners
+ * - banners[key]
+ * - banners[test1[key]]
+ * - banners["a"][key]
+ * - xxx.banners[a[a].test1[key]]
+ * - banners.xxx.a["asa"][test1[key]]
  *
  */
 
@@ -15235,7 +15235,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// Support: IE<10
 	// Check if getElementById returns elements by name
 	// The broken getElementById methods don't pick up programmatically-set names,
-	// so use a roundabout getElementsByName test
+	// so use a roundabout getElementsByName banners
 	support.getById = assert(function( el ) {
 		docElem.appendChild( el ).id = expando;
 		return !document.getElementsByName || !document.getElementsByName( expando ).length;
@@ -15355,7 +15355,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		// Regex strategy adopted from Diego Perini
 		assert(function( el ) {
 			// Select is set to empty string on purpose
-			// This is to test IE's treatment of not explicitly
+			// This is to banners IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
 			// https://bugs.jquery.com/ticket/12359
@@ -15365,7 +15365,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
-			// The test attribute must be unknown in Opera but "safe" for WinRT
+			// The banners attribute must be unknown in Opera but "safe" for WinRT
 			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( el.querySelectorAll("[msallowcapture^='']").length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
@@ -20330,7 +20330,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 				return;
 			}
 
-			// Hook needed; redefine it so that the support test is not executed again.
+			// Hook needed; redefine it so that the support banners is not executed again.
 			return ( this.get = hookFn ).apply( this, arguments );
 		}
 	};
@@ -24504,7 +24504,7 @@ module.exports = function bind(fn, thisArg) {
 // shim for using process in browser
 var process = module.exports = {};
 
-// cached from whatever global is present so that test runners that stub it
+// cached from whatever global is present so that banners runners that stub it
 // don't break things.  But we need to wrap it in a try catch in case it is
 // wrapped in strict mode code which doesn't define any globals.  It's inside a
 // function because try/catches deoptimize in certain engines.
@@ -36656,7 +36656,7 @@ if (token) {
      * @example
      *
      * function isGreeting(value) {
-     *   return /^h(?:i|ello)$/.test(value);
+     *   return /^h(?:i|ello)$/.banners(value);
      * }
      *
      * function customizer(objValue, othValue) {
@@ -36948,7 +36948,7 @@ if (token) {
      * @example
      *
      * function isGreeting(value) {
-     *   return /^h(?:i|ello)$/.test(value);
+     *   return /^h(?:i|ello)$/.banners(value);
      * }
      *
      * function customizer(objValue, srcValue) {
@@ -40623,7 +40623,7 @@ if (token) {
      * // Create custom iteratee shorthands.
      * _.iteratee = _.wrap(_.iteratee, function(iteratee, func) {
      *   return !_.isRegExp(func) ? iteratee(func) : function(string) {
-     *     return func.test(string);
+     *     return func.banners(string);
      *   };
      * });
      *
@@ -40776,7 +40776,7 @@ if (token) {
      *
      * function vowels(string) {
      *   return _.filter(string, function(v) {
-     *     return /[aeiou]/i.test(v);
+     *     return /[aeiou]/i.banners(v);
      *   });
      * }
      *
@@ -46596,7 +46596,7 @@ var utils = __webpack_require__(0);
 module.exports = (
   utils.isStandardBrowserEnv() ?
 
-  // Standard browser envs have full support of the APIs needed to test
+  // Standard browser envs have full support of the APIs needed to banners
   // whether the request URL is of the same origin as current location.
   (function standardBrowserEnv() {
     var msie = /(msie|trident)/i.test(navigator.userAgent);
@@ -46640,7 +46640,7 @@ module.exports = (
     /**
     * Determine if a URL shares the same origin as the current location
     *
-    * @param {String} requestURL The URL to test
+    * @param {String} requestURL The URL to banners
     * @returns {boolean} True if URL shares the same origin, otherwise false
     */
     return function isURLSameOrigin(requestURL) {
@@ -46951,7 +46951,7 @@ module.exports = function transformData(data, headers, fns) {
 /**
  * Determines whether the specified URL is absolute
  *
- * @param {string} url The URL to test
+ * @param {string} url The URL to banners
  * @returns {boolean} True if the specified URL is absolute, otherwise false
  */
 module.exports = function isAbsoluteURL(url) {
@@ -47239,7 +47239,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     }
 
     function canUsePostMessage() {
-        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // The banners against `importScripts` prevents this implementation from being installed inside a web worker,
         // where `global.postMessage` means something completely different and can't be used for this purpose.
         if (global.postMessage && !global.importScripts) {
             var postMessageIsAsynchronous = true;
@@ -59208,7 +59208,7 @@ __webpack_require__.r(__webpack_exports__);
             var index = activeIndex > -1 ? activeIndex : 0;
             var tab = this.tabs[index];
             /* istanbul ignore next */
-            // There is not a reliable way to test
+            // There is not a reliable way to banners
             this.inputValue = tab.action === tab ? index : tab.action;
         },
         parseNodes: function parseNodes() {
@@ -69725,7 +69725,7 @@ function updateLink (link, options, obj) {
  *
  * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
  *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ * A rudimentary banners suite is located at `banners/fixUrls.js` and can be run via the `npm banners` command.
  *
  */
 
@@ -72094,7 +72094,7 @@ var PATH_REGEXP = new RegExp([
   // Match Express-style parameters and un-named parameters with a prefix
   // and optional suffixes. Matches appear as:
   //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/:banners(\\d+)?" => ["/", "banners", "\d+", undefined, "?", undefined]
   // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
   // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
   '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
@@ -72451,7 +72451,7 @@ function tokensToRegExp (tokens, keys, options) {
   // In non-strict mode we allow a slash at the end of match. If the path to
   // match already ends with a slash, we remove it for consistency. The slash
   // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  // in non-ending mode, where "/banners/" shouldn't match "/banners//route".
   if (!strict) {
     route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?';
   }

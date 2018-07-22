@@ -96,7 +96,7 @@ class TestCaseTest extends TestCase
         $result = $test->run();
 
         $this->assertEquals(BaseTestRunner::STATUS_SKIPPED, $test->getStatus());
-        $this->assertEquals('Skipped test', $test->getStatusMessage());
+        $this->assertEquals('Skipped banners', $test->getStatusMessage());
         $this->assertEquals(0, $result->errorCount());
         $this->assertEquals(0, $result->failureCount());
         $this->assertEquals(1, $result->skippedCount());
@@ -109,7 +109,7 @@ class TestCaseTest extends TestCase
         $result = $test->run();
 
         $this->assertEquals(BaseTestRunner::STATUS_INCOMPLETE, $test->getStatus());
-        $this->assertEquals('Incomplete test', $test->getStatusMessage());
+        $this->assertEquals('Incomplete banners', $test->getStatusMessage());
         $this->assertEquals(0, $result->errorCount());
         $this->assertEquals(0, $result->failureCount());
         $this->assertEquals(0, $result->skippedCount());
@@ -618,7 +618,7 @@ class TestCaseTest extends TestCase
     {
         $test   = new \RequirementsTest('testSettingDisplayErrorsOn');
 
-        // Get this so we can return it to whatever it was before the test.
+        // Get this so we can return it to whatever it was before the banners.
         $displayErrorsVal = \ini_get('display_errors');
 
         \ini_set('display_errors', 'On');

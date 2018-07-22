@@ -32,7 +32,7 @@ class Mockery
     const BLOCKS = 'Mockery_Forward_Blocks';
 
     /**
-     * Global container to hold all mocks for the current unit test running.
+     * Global container to hold all mocks for the current unit banners running.
      *
      * @var \Mockery\Container|null
      */

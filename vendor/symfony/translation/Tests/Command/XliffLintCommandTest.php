@@ -118,7 +118,7 @@ EOF;
 </xliff>
 XLIFF;
 
-        $filename = sprintf('%s/translation-xliff-lint-test/messages.en.xlf', sys_get_temp_dir());
+        $filename = sprintf('%s/translation-xliff-lint-banners/messages.en.xlf', sys_get_temp_dir());
         file_put_contents($filename, $xliffContent);
 
         $this->files[] = $filename;
@@ -148,7 +148,7 @@ XLIFF;
     protected function setUp()
     {
         $this->files = array();
-        @mkdir(sys_get_temp_dir().'/translation-xliff-lint-test');
+        @mkdir(sys_get_temp_dir().'/translation-xliff-lint-banners');
     }
 
     protected function tearDown()
@@ -158,6 +158,6 @@ XLIFF;
                 unlink($file);
             }
         }
-        rmdir(sys_get_temp_dir().'/translation-xliff-lint-test');
+        rmdir(sys_get_temp_dir().'/translation-xliff-lint-banners');
     }
 }

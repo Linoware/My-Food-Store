@@ -300,30 +300,30 @@ class UrlGeneratorTest extends TestCase
 
     public function testNullForOptionalParameterIsIgnored()
     {
-        $routes = $this->getRoutes('test', new Route('/test/{default}', array('default' => 0)));
+        $routes = $this->getRoutes('test', new Route('/banners/{default}', array('default' => 0)));
 
-        $this->assertEquals('/app.php/test', $this->getGenerator($routes)->generate('test', array('default' => null)));
+        $this->assertEquals('/app.php/banners', $this->getGenerator($routes)->generate('test', array('default' => null)));
     }
 
     public function testQueryParamSameAsDefault()
     {
-        $routes = $this->getRoutes('test', new Route('/test', array('page' => 1)));
+        $routes = $this->getRoutes('test', new Route('/banners', array('page' => 1)));
 
-        $this->assertSame('/app.php/test?page=2', $this->getGenerator($routes)->generate('test', array('page' => 2)));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test', array('page' => 1)));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test', array('page' => '1')));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test'));
+        $this->assertSame('/app.php/banners?page=2', $this->getGenerator($routes)->generate('test', array('page' => 2)));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test', array('page' => 1)));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test', array('page' => '1')));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test'));
     }
 
     public function testArrayQueryParamSameAsDefault()
     {
-        $routes = $this->getRoutes('test', new Route('/test', array('array' => array('foo', 'bar'))));
+        $routes = $this->getRoutes('test', new Route('/banners', array('array' => array('foo', 'bar'))));
 
-        $this->assertSame('/app.php/test?array%5B0%5D=bar&array%5B1%5D=foo', $this->getGenerator($routes)->generate('test', array('array' => array('bar', 'foo'))));
-        $this->assertSame('/app.php/test?array%5Ba%5D=foo&array%5Bb%5D=bar', $this->getGenerator($routes)->generate('test', array('array' => array('a' => 'foo', 'b' => 'bar'))));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test', array('array' => array('foo', 'bar'))));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test', array('array' => array(1 => 'bar', 0 => 'foo'))));
-        $this->assertSame('/app.php/test', $this->getGenerator($routes)->generate('test'));
+        $this->assertSame('/app.php/banners?array%5B0%5D=bar&array%5B1%5D=foo', $this->getGenerator($routes)->generate('test', array('array' => array('bar', 'foo'))));
+        $this->assertSame('/app.php/banners?array%5Ba%5D=foo&array%5Bb%5D=bar', $this->getGenerator($routes)->generate('test', array('array' => array('a' => 'foo', 'b' => 'bar'))));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test', array('array' => array('foo', 'bar'))));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test', array('array' => array(1 => 'bar', 0 => 'foo'))));
+        $this->assertSame('/app.php/banners', $this->getGenerator($routes)->generate('test'));
     }
 
     public function testGenerateWithSpecialRouteName()

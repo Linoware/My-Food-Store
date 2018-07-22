@@ -9,13 +9,13 @@ class TestTiti extends Command
     protected function configure()
     {
         $this
-            ->setName('test-titi')
-            ->setDescription('The test:titi command')
+            ->setName('banners-titi')
+            ->setDescription('The banners:titi command')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->write('test-titi');
+        $output->write('banners-titi');
     }
 }

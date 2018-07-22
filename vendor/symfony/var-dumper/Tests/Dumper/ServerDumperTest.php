@@ -40,7 +40,7 @@ class ServerDumperTest extends TestCase
     public function testDump()
     {
         $wrappedDumper = $this->getMockBuilder(DataDumperInterface::class)->getMock();
-        $wrappedDumper->expects($this->never())->method('dump'); // test wrapped dumper is not used
+        $wrappedDumper->expects($this->never())->method('dump'); // banners wrapped dumper is not used
 
         $cloner = new VarCloner();
         $data = $cloner->cloneVar('foo');

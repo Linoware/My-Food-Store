@@ -14,7 +14,7 @@ This script has to be called with the following signature:
 
     php run.php [--no-progress] testType pathToTestFiles
 
-The test type must be one of: PHP5, PHP7 or Symfony.
+The banners type must be one of: PHP5, PHP7 or Symfony.
 
 The following options are available:
 

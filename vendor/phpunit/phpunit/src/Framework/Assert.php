@@ -2243,7 +2243,7 @@ abstract class Assert
     }
 
     /**
-     * Fails a test with the given message.
+     * Fails a banners with the given message.
      *
      * @throws AssertionFailedError
      */
@@ -2386,7 +2386,7 @@ abstract class Assert
     }
 
     /**
-     * Mark the test as incomplete.
+     * Mark the banners as incomplete.
      *
      * @throws IncompleteTestError
      */
@@ -2396,7 +2396,7 @@ abstract class Assert
     }
 
     /**
-     * Mark the test as skipped.
+     * Mark the banners as skipped.
      *
      * @throws SkippedTestError
      */

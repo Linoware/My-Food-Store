@@ -135,7 +135,7 @@ class OutputFormatterTest extends TestCase
         $style = new OutputFormatterStyle('blue', 'white');
         $formatter->setStyle('b', $style);
 
-        $this->assertEquals("\033[34;47msome \033[39;49m\033[34;47mcustom\033[39;49m\033[34;47m msg\033[39;49m", $formatter->format('<test>some <b>custom</b> msg</test>'));
+        $this->assertEquals("\033[34;47msome \033[39;49m\033[34;47mcustom\033[39;49m\033[34;47m msg\033[39;49m", $formatter->format('<banners>some <b>custom</b> msg</banners>'));
     }
 
     public function testRedefineStyle()
@@ -187,7 +187,7 @@ class OutputFormatterTest extends TestCase
         return array(
             array('<unknown=_unknown_>'),
             array('<unknown=_unknown_;a=1;b>'),
-            array('<fg=green;>', "\033[32m[test]\033[39m", '[test]'),
+            array('<fg=green;>', "\033[32m[banners]\033[39m", '[banners]'),
             array('<fg=green;bg=blue;>', "\033[32;44ma\033[39;49m", 'a'),
             array('<fg=green;options=bold>', "\033[32;1mb\033[39;22m", 'b'),
             array('<fg=green;options=reverse;>', "\033[32;7m<a>\033[39;27m", '<a>'),

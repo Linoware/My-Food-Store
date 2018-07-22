@@ -62,7 +62,7 @@ class LogicalAnd extends Constraint
      * failure.
      *
      * @param mixed  $other        value or object to evaluate
-     * @param string $description  Additional information about the test
+     * @param string $description  Additional information about the banners
      * @param bool   $returnResult Whether to return a result or throw an exception
      *
      * @throws ExpectationFailedException

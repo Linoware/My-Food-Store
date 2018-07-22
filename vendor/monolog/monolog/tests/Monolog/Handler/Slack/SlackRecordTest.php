@@ -57,7 +57,7 @@ class SlackRecordTest extends TestCase
 
     public function testAddsChannel()
     {
-        $channel = '#test';
+        $channel = '#banners';
         $record = new SlackRecord($channel);
         $data = $record->getSlackData($this->getRecord());
 
@@ -98,7 +98,7 @@ class SlackRecordTest extends TestCase
     public function testStringify($fields, $expectedResult)
     {
         $slackRecord = new SlackRecord(
-            '#test',
+            '#banners',
             'test',
             true,
             null,

@@ -161,7 +161,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Incomplete test.
+     * Incomplete banners.
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void
     {
@@ -174,7 +174,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Risky test.
+     * Risky banners.
      */
     public function addRiskyTest(Test $test, \Throwable $t, float $time): void
     {
@@ -187,7 +187,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Skipped test.
+     * Skipped banners.
      */
     public function addSkippedTest(Test $test, \Throwable $t, float $time): void
     {
@@ -214,7 +214,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * A test started.
+     * A banners started.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
@@ -263,7 +263,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * A test ended.
+     * A banners ended.
      */
     public function endTest(Test $test, float $time): void
     {
@@ -301,7 +301,7 @@ abstract class ResultPrinter extends Printer implements TestListener
     }
 
     /**
-     * Handler for 'on test' event.
+     * Handler for 'on banners' event.
      */
     protected function onTest($name, bool $success = true): void
     {

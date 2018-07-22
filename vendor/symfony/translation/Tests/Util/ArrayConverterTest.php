@@ -43,13 +43,13 @@ class ArrayConverterTest extends TestCase
                 // input
                 array(
                     'foo.bar' => 'value1',
-                    'foo.bar.test' => 'value2',
+                    'foo.bar.banners' => 'value2',
                 ),
                 // expected output
                 array(
                     'foo' => array(
                         'bar' => 'value1',
-                        'bar.test' => 'value2',
+                        'bar.banners' => 'value2',
                     ),
                 ),
             ),

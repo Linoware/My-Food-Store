@@ -51,7 +51,7 @@ abstract class ParserTest extends TestCase
         $code = <<<'EOC'
 <?php
 /** Doc comment */
-function test($a) {
+function banners($a) {
     // Line
     // Comments
     echo $a;

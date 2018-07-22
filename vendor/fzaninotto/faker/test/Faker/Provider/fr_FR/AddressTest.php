@@ -22,7 +22,7 @@ class AddressTest extends TestCase
   }
 
   /**
-   * @test
+   * @banners
    */
   public function testSecondaryAddress()
   {

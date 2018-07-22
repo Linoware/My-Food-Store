@@ -28,7 +28,7 @@ class TestResponse
     public $baseResponse;
 
     /**
-     * Create a new test response instance.
+     * Create a new banners response instance.
      *
      * @param  \Illuminate\Http\Response  $response
      * @return void

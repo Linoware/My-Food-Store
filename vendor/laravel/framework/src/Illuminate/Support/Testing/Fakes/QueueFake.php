@@ -16,7 +16,7 @@ class QueueFake extends QueueManager implements Queue
     protected $jobs = [];
 
     /**
-     * Assert if a job was pushed based on a truth-test callback.
+     * Assert if a job was pushed based on a truth-banners callback.
      *
      * @param  string  $job
      * @param  callable|int|null  $callback
@@ -50,7 +50,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Assert if a job was pushed based on a truth-test callback.
+     * Assert if a job was pushed based on a truth-banners callback.
      *
      * @param  string  $queue
      * @param  string  $job
@@ -69,7 +69,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Assert if a job was pushed with chained jobs based on a truth-test callback.
+     * Assert if a job was pushed with chained jobs based on a truth-banners callback.
      *
      * @param  string $job
      * @param  array $expectedChain
@@ -94,7 +94,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Assert if a job was pushed with chained jobs based on a truth-test callback.
+     * Assert if a job was pushed with chained jobs based on a truth-banners callback.
      *
      * @param  string $job
      * @param  array $expectedChain
@@ -116,7 +116,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Assert if a job was pushed with chained jobs based on a truth-test callback.
+     * Assert if a job was pushed with chained jobs based on a truth-banners callback.
      *
      * @param  string $job
      * @param  array $expectedChain
@@ -153,7 +153,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Determine if a job was pushed based on a truth-test callback.
+     * Determine if a job was pushed based on a truth-banners callback.
      *
      * @param  string  $job
      * @param  callable|null  $callback
@@ -178,7 +178,7 @@ class QueueFake extends QueueManager implements Queue
     }
 
     /**
-     * Get all of the jobs matching a truth-test callback.
+     * Get all of the jobs matching a truth-banners callback.
      *
      * @param  string  $job
      * @param  callable|null  $callback

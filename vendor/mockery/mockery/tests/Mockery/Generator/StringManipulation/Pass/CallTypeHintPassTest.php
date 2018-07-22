@@ -32,7 +32,7 @@ class CallTypeHintPassTest extends TestCase
     ';
 
     /**
-     * @test
+     * @banners
      */
     public function shouldRemoveCallTypeHintIfRequired()
     {
@@ -45,7 +45,7 @@ class CallTypeHintPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldRemoveCallStaticTypeHintIfRequired()
     {

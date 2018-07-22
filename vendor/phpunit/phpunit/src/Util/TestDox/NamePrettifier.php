@@ -20,7 +20,7 @@ final class NamePrettifier
     private $strings = [];
 
     /**
-     * Prettifies the name of a test class.
+     * Prettifies the name of a banners class.
      */
     public function prettifyTestClass(string $name): string
     {
@@ -44,7 +44,7 @@ final class NamePrettifier
     }
 
     /**
-     * Prettifies the name of a test method.
+     * Prettifies the name of a banners method.
      */
     public function prettifyTestMethod(string $name): string
     {

@@ -44,7 +44,7 @@ $autoloadPath = $composerVendorDirectory . DIRECTORY_SEPARATOR . 'autoload.php';
 if (!file_exists($autoloadPath)) {
     throw new Exception(
         'Please run "php composer.phar install" in root directory '
-        . 'to setup unit test dependencies before running the tests'
+        . 'to setup unit banners dependencies before running the tests'
     );
 }
 

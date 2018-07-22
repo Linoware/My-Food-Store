@@ -24,7 +24,7 @@ class PdoSessionHandlerTest extends TestCase
 
     protected function tearDown()
     {
-        // make sure the temporary database file is deleted when it has been created (even when a test fails)
+        // make sure the temporary database file is deleted when it has been created (even when a banners fails)
         if ($this->dbFile) {
             @unlink($this->dbFile);
         }
@@ -281,7 +281,7 @@ class PdoSessionHandlerTest extends TestCase
 
         $storage->open('', 'sid');
         $storage->read('gc_id');
-        ini_set('session.gc_maxlifetime', -1); // test that you can set lifetime of a session after it has been read
+        ini_set('session.gc_maxlifetime', -1); // banners that you can set lifetime of a session after it has been read
         $storage->write('gc_id', 'data');
         $storage->close();
         $this->assertEquals(2, $pdo->query('SELECT COUNT(*) FROM sessions')->fetchColumn(), 'No session pruned because gc not called');
@@ -337,19 +337,19 @@ class PdoSessionHandlerTest extends TestCase
 
     public function provideUrlDsnPairs()
     {
-        yield array('mysql://localhost/test', 'mysql:host=localhost;dbname=test;');
-        yield array('mysql://localhost:56/test', 'mysql:host=localhost;port=56;dbname=test;');
-        yield array('mysql2://root:pwd@localhost/test', 'mysql:host=localhost;dbname=test;', 'root', 'pwd');
-        yield array('postgres://localhost/test', 'pgsql:host=localhost;dbname=test;');
-        yield array('postgresql://localhost:5634/test', 'pgsql:host=localhost;port=5634;dbname=test;');
-        yield array('postgres://root:pwd@localhost/test', 'pgsql:host=localhost;dbname=test;', 'root', 'pwd');
-        yield 'sqlite relative path' => array('sqlite://localhost/tmp/test', 'sqlite:tmp/test');
-        yield 'sqlite absolute path' => array('sqlite://localhost//tmp/test', 'sqlite:/tmp/test');
-        yield 'sqlite relative path without host' => array('sqlite:///tmp/test', 'sqlite:tmp/test');
-        yield 'sqlite absolute path without host' => array('sqlite3:////tmp/test', 'sqlite:/tmp/test');
+        yield array('mysql://localhost/banners', 'mysql:host=localhost;dbname=banners;');
+        yield array('mysql://localhost:56/banners', 'mysql:host=localhost;port=56;dbname=banners;');
+        yield array('mysql2://root:pwd@localhost/banners', 'mysql:host=localhost;dbname=banners;', 'root', 'pwd');
+        yield array('postgres://localhost/banners', 'pgsql:host=localhost;dbname=banners;');
+        yield array('postgresql://localhost:5634/banners', 'pgsql:host=localhost;port=5634;dbname=banners;');
+        yield array('postgres://root:pwd@localhost/banners', 'pgsql:host=localhost;dbname=banners;', 'root', 'pwd');
+        yield 'sqlite relative path' => array('sqlite://localhost/tmp/banners', 'sqlite:tmp/banners');
+        yield 'sqlite absolute path' => array('sqlite://localhost//tmp/banners', 'sqlite:/tmp/banners');
+        yield 'sqlite relative path without host' => array('sqlite:///tmp/banners', 'sqlite:tmp/banners');
+        yield 'sqlite absolute path without host' => array('sqlite3:////tmp/banners', 'sqlite:/tmp/banners');
         yield array('sqlite://localhost/:memory:', 'sqlite::memory:');
-        yield array('mssql://localhost/test', 'sqlsrv:server=localhost;Database=test');
-        yield array('mssql://localhost:56/test', 'sqlsrv:server=localhost,56;Database=test');
+        yield array('mssql://localhost/banners', 'sqlsrv:server=localhost;Database=banners');
+        yield array('mssql://localhost:56/banners', 'sqlsrv:server=localhost,56;Database=banners');
     }
 
     private function createStream($content)

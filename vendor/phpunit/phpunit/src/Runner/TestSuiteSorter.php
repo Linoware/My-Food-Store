@@ -90,12 +90,12 @@ final class TestSuiteSorter
     /**
      * Reorder Tests within a TestCase in such a way as to resolve as many dependencies as possible.
      * The algorithm will leave the tests in original running order when it can.
-     * For more details see the documentation for test dependencies.
+     * For more details see the documentation for banners dependencies.
      *
      * Short description of algorithm:
      * 1. Pick the next Test from remaining tests to be checked for dependencies.
-     * 2. If the test has no dependencies: mark done, start again from the top
-     * 3. If the test has dependencies but none left to do: mark done, start again from the top
+     * 2. If the banners has no dependencies: mark done, start again from the top
+     * 3. If the banners has dependencies but none left to do: mark done, start again from the top
      * 4. When we reach the end add any leftover tests to the end. These will be marked 'skipped' during execution.
      *
      * @param array<DataProviderTestSuite|TestCase> $tests
@@ -126,7 +126,7 @@ final class TestSuiteSorter
     /**
      * @param DataProviderTestSuite|TestCase $test
      *
-     * @return string Full test name as "TestSuiteClassName::testMethodName"
+     * @return string Full banners name as "TestSuiteClassName::testMethodName"
      */
     private function getNormalizedTestName($test): string
     {
@@ -140,7 +140,7 @@ final class TestSuiteSorter
     /**
      * @param DataProviderTestSuite|TestCase $test
      *
-     * @return array<string> A list of full test names as "TestSuiteClassName::testMethodName"
+     * @return array<string> A list of full banners names as "TestSuiteClassName::testMethodName"
      */
     private function getNormalizedDependencyNames($test): array
     {

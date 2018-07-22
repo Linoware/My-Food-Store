@@ -291,7 +291,7 @@ class ApplicationTest extends TestCase
         $application = new Application();
         $application->add(new \TestTiti());
         $application->add(new \TestToto());
-        $this->assertEquals('test-toto', $application->find('test')->getName());
+        $this->assertEquals('banners-toto', $application->find('test')->getName());
     }
 
     /**
@@ -923,7 +923,7 @@ class ApplicationTest extends TestCase
      *
      * If the "verbose" option is just before an argument in ArgvInput,
      * an argument value should not be treated as verbosity value.
-     * This test will fail with "Not enough arguments." if broken
+     * This banners will fail with "Not enough arguments." if broken
      */
     public function testVerboseValueNotBreakArguments()
     {
@@ -1425,9 +1425,9 @@ class ApplicationTest extends TestCase
         });
 
         $tester = new ApplicationTester($application);
-        $tester->run(array('command' => 'foo', '--extra' => 'some test value'));
+        $tester->run(array('command' => 'foo', '--extra' => 'some banners value'));
 
-        $this->assertEquals('some test value', $extraValue);
+        $this->assertEquals('some banners value', $extraValue);
     }
 
     public function testSetRunCustomDefaultCommand()

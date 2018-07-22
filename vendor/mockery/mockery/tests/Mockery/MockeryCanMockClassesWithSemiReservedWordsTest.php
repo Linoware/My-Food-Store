@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 class MockeryCanMockClassesWithSemiReservedWordsTest extends TestCase
 {
     /**
-     * @test
+     * @banners
      */
     public function smoke_test()
     {

@@ -22,7 +22,7 @@ class AddressTest extends TestCase
   }
 
   /**
-   * @test
+   * @banners
    */
   public function testCityName()
   {
@@ -32,7 +32,7 @@ class AddressTest extends TestCase
   }
 
   /**
-   * @test
+   * @banners
    */
   public function testDistrict()
   {
@@ -42,7 +42,7 @@ class AddressTest extends TestCase
   }
 
   /**
-   * @test
+   * @banners
    */
   public function testRegion()
   {

@@ -31,7 +31,7 @@ class InterfacePassTest extends TestCase
     const CODE = "class Mock implements MockInterface";
 
     /**
-     * @test
+     * @banners
      */
     public function shouldNotAlterCodeIfNoTargetInterfaces()
     {
@@ -46,7 +46,7 @@ class InterfacePassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function shouldAddAnyInterfaceNamesToImplementsDefinition()
     {

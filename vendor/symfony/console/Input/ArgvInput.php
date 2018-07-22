@@ -278,8 +278,8 @@ class ArgvInput extends Input
             }
             foreach ($values as $value) {
                 // Options with values:
-                //   For long options, test for '--option=' at beginning
-                //   For short options, test for '-o' at beginning
+                //   For long options, banners for '--option=' at beginning
+                //   For short options, banners for '-o' at beginning
                 $leading = 0 === strpos($value, '--') ? $value.'=' : $value;
                 if ($token === $value || '' !== $leading && 0 === strpos($token, $leading)) {
                     return true;
@@ -309,8 +309,8 @@ class ArgvInput extends Input
                     return array_shift($tokens);
                 }
                 // Options with values:
-                //   For long options, test for '--option=' at beginning
-                //   For short options, test for '-o' at beginning
+                //   For long options, banners for '--option=' at beginning
+                //   For short options, banners for '-o' at beginning
                 $leading = 0 === strpos($value, '--') ? $value.'=' : $value;
                 if ('' !== $leading && 0 === strpos($token, $leading)) {
                     return substr($token, strlen($leading));

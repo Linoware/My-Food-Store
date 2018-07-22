@@ -31,7 +31,7 @@ class ConstantsPassTest extends TestCase
     const CODE = 'class Foo {}';
 
     /**
-     * @test
+     * @banners
      */
     public function shouldAddConstants()
     {
@@ -47,6 +47,6 @@ class ConstantsPassTest extends TestCase
             ['ClassWithConstants' => ['FOO' => 'test']]
         );
         $code = $pass->apply(static::CODE, $config);
-        $this->assertContains("const FOO = 'test'", $code);
+        $this->assertContains("const FOO = 'banners'", $code);
     }
 }

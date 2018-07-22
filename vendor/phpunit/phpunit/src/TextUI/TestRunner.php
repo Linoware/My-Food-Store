@@ -123,7 +123,7 @@ class TestRunner extends BaseTestRunner
             );
         }
 
-        throw new Exception('No test case or test suite found.');
+        throw new Exception('No banners case or banners suite found.');
     }
 
     public function __construct(TestSuiteLoader $loader = null, CodeCoverageFilter $filter = null)
@@ -747,7 +747,7 @@ class TestRunner extends BaseTestRunner
 
     /**
      * Override to define how to handle a failed loading of
-     * a test suite.
+     * a banners suite.
      */
     protected function runFailed(string $message): void
     {

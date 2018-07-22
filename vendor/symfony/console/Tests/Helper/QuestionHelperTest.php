@@ -108,7 +108,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testAskWithAutocomplete()
     {
         if (!$this->hasSttyAvailable()) {
-            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+            $this->markTestSkipped('`stty` is required to banners autocomplete functionality');
         }
 
         // Acm<NEWLINE>
@@ -141,7 +141,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testAskWithAutocompleteWithNonSequentialKeys()
     {
         if (!$this->hasSttyAvailable()) {
-            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+            $this->markTestSkipped('`stty` is required to banners autocomplete functionality');
         }
 
         // <UP ARROW><UP ARROW><NEWLINE><DOWN ARROW><DOWN ARROW><NEWLINE>
@@ -160,7 +160,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testAskWithAutocompleteWithExactMatch()
     {
         if (!$this->hasSttyAvailable()) {
-            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+            $this->markTestSkipped('`stty` is required to banners autocomplete functionality');
         }
 
         $inputStream = $this->getInputStream("b\n");
@@ -183,7 +183,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testAutocompleteWithTrailingBackslash()
     {
         if (!$this->hasSttyAvailable()) {
-            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+            $this->markTestSkipped('`stty` is required to banners autocomplete functionality');
         }
 
         $inputStream = $this->getInputStream('E');
@@ -222,7 +222,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testAskHiddenResponse()
     {
         if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('This test is not supported on Windows');
+            $this->markTestSkipped('This banners is not supported on Windows');
         }
 
         $dialog = new QuestionHelper();
@@ -530,7 +530,7 @@ class QuestionHelperTest extends AbstractQuestionHelperTest
     public function testTraversableAutocomplete()
     {
         if (!$this->hasSttyAvailable()) {
-            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+            $this->markTestSkipped('`stty` is required to banners autocomplete functionality');
         }
 
         // Acm<NEWLINE>

@@ -9,14 +9,14 @@ class TestToto extends Command
     protected function configure()
     {
         $this
-            ->setName('test-toto')
-            ->setDescription('The test-toto command')
+            ->setName('banners-toto')
+            ->setDescription('The banners-toto command')
             ->setAliases(array('test'))
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->write('test-toto');
+        $output->write('banners-toto');
     }
 }

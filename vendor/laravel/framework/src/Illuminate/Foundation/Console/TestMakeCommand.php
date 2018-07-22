@@ -12,14 +12,14 @@ class TestMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:test {name : The name of the class} {--unit : Create a unit test}';
+    protected $signature = 'make:banners {name : The name of the class} {--unit : Create a unit banners}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new test class';
+    protected $description = 'Create a new banners class';
 
     /**
      * The type of class being generated.

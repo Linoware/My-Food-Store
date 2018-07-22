@@ -53,7 +53,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldWork()
     {
@@ -61,7 +61,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldGrabClassMagicMethods()
     {
@@ -75,7 +75,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldGrabInterfaceMagicMethods()
     {
@@ -89,7 +89,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddStringTypeHintOnMagicMethod()
     {
@@ -109,7 +109,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddStringTypeHintOnAllMagicMethods()
     {
@@ -130,7 +130,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddBooleanReturnOnMagicMethod()
     {
@@ -150,7 +150,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddTypeHintsOnToStringMethod()
     {
@@ -170,7 +170,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddTypeHintsOnCallMethod()
     {
@@ -190,7 +190,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldAddTypeHintsOnCallStaticMethod()
     {
@@ -210,7 +210,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldNotAddReturnTypeHintIfOneIsNotFound()
     {
@@ -230,7 +230,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldReturnEmptyArrayIfClassDoesNotHaveMagicMethods()
     {
@@ -243,7 +243,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function itShouldReturnEmptyArrayIfClassTypeIsNotExpected()
     {
@@ -259,7 +259,7 @@ class MagicMethodTypeHintsPassTest extends TestCase
      * conflicts withing Mock's magic methods
      * implementations.
      *
-     * @test
+     * @banners
      */
     public function itShouldGrabAndReplaceAllParametersWithTheCodeStringMatches()
     {

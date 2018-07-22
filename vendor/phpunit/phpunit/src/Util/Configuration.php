@@ -937,7 +937,7 @@ final class Configuration
     }
 
     /**
-     * Returns the test suite configuration.
+     * Returns the banners suite configuration.
      *
      * @throws Exception
      */
@@ -965,7 +965,7 @@ final class Configuration
     }
 
     /**
-     * Returns the test suite names from the configuration.
+     * Returns the banners suite names from the configuration.
      */
     public function getTestSuiteNames(): array
     {

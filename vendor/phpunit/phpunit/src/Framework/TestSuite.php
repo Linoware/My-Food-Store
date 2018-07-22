@@ -21,7 +21,7 @@ use ReflectionMethod;
 use Throwable;
 
 /**
- * A TestSuite is a composite of Tests. It runs a collection of test cases.
+ * A TestSuite is a composite of Tests. It runs a collection of banners cases.
  */
 class TestSuite implements Test, SelfDescribing, IteratorAggregate
 {
@@ -45,28 +45,28 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     protected $runTestInSeparateProcess = false;
 
     /**
-     * The name of the test suite.
+     * The name of the banners suite.
      *
      * @var string
      */
     protected $name = '';
 
     /**
-     * The test groups of the test suite.
+     * The banners groups of the banners suite.
      *
      * @var array
      */
     protected $groups = [];
 
     /**
-     * The tests in the test suite.
+     * The tests in the banners suite.
      *
      * @var TestCase[]
      */
     protected $tests = [];
 
     /**
-     * The number of tests in the test suite.
+     * The number of tests in the banners suite.
      *
      * @var int
      */
@@ -269,7 +269,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
         }
 
         if (!isset($test)) {
-            throw new Exception('No valid test provided.');
+            throw new Exception('No valid banners provided.');
         }
 
         if ($test instanceof TestCase) {
@@ -422,7 +422,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
 
     /**
      * Template Method that is called before the tests
-     * of this test suite are run.
+     * of this banners suite are run.
      */
     protected function setUp(): void
     {
@@ -430,14 +430,14 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
 
     /**
      * Template Method that is called after the tests
-     * of this test suite have finished running.
+     * of this banners suite have finished running.
      */
     protected function tearDown(): void
     {
     }
 
     /**
-     * Returns a string representation of the test suite.
+     * Returns a string representation of the banners suite.
      */
     public function toString(): string
     {
@@ -445,7 +445,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Adds a test to the suite.
+     * Adds a banners to the suite.
      *
      * @param array $groups
      */
@@ -530,7 +530,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
      *
      * If the named file cannot be read or there are no new tests that can be
      * added, a <code>PHPUnit\Framework\WarningTestCase</code> will be created instead,
-     * leaving the current test run untouched.
+     * leaving the current banners run untouched.
      *
      * @throws Exception
      */
@@ -545,23 +545,23 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
         }
 
         // The given file may contain further stub classes in addition to the
-        // test class itself. Figure out the actual test class.
+        // banners class itself. Figure out the actual banners class.
         $filename   = FileLoader::checkAndLoad($filename);
         $newClasses = \array_diff(\get_declared_classes(), $this->declaredClasses);
 
-        // The diff is empty in case a parent class (with test methods) is added
+        // The diff is empty in case a parent class (with banners methods) is added
         // AFTER a child class that inherited from it. To account for that case,
         // accumulate all discovered classes, so the parent class may be found in
         // a later invocation.
         if (!empty($newClasses)) {
-            // On the assumption that test classes are defined first in files,
+            // On the assumption that banners classes are defined first in files,
             // process discovered classes in approximate LIFO order, so as to
             // avoid unnecessary reflection.
             $this->foundClasses    = \array_merge($newClasses, $this->foundClasses);
             $this->declaredClasses = \get_declared_classes();
         }
 
-        // The test class's name must match the filename, either in full, or as
+        // The banners class's name must match the filename, either in full, or as
         // a PEAR/PSR-0 prefixed short name ('NameSpace_ShortName'), or as a
         // PSR-1 local short name ('NameSpace\ShortName'). The comparison must be
         // anchored to prevent false-positive matches (e.g., 'OtherShortName').
@@ -607,7 +607,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Wrapper for addTestFile() that adds multiple test files.
+     * Wrapper for addTestFile() that adds multiple banners files.
      *
      * @param array|Iterator $fileNames
      *
@@ -629,7 +629,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Counts the number of test cases that will be run by this test.
+     * Counts the number of banners cases that will be run by this banners.
      *
      * @param bool $preferCache indicates if cache is preferred
      */
@@ -659,7 +659,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Returns the test groups of the suite.
+     * Returns the banners groups of the suite.
      */
     public function getGroups(): array
     {
@@ -672,7 +672,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Set tests groups of the test case
+     * Set tests groups of the banners case
      */
     public function setGroupDetails(array $groups): void
     {
@@ -789,7 +789,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Returns the test at the given index.
+     * Returns the banners at the given index.
      *
      * @return false|Test
      */
@@ -811,7 +811,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Set tests of the test suite
+     * Set tests of the banners suite
      */
     public function setTests(array $tests): void
     {
@@ -819,7 +819,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Mark the test suite as skipped.
+     * Mark the banners suite as skipped.
      *
      * @param string $message
      *
@@ -861,7 +861,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
     }
 
     /**
-     * Returns an iterator for this test suite.
+     * Returns an iterator for this banners suite.
      */
     public function getIterator(): Iterator
     {
@@ -908,7 +908,7 @@ class TestSuite implements Test, SelfDescribing, IteratorAggregate
             $this->addTest(
                 self::warning(
                     \sprintf(
-                        'Test method "%s" in test class "%s" is not public.',
+                        'Test method "%s" in banners class "%s" is not public.',
                         $name,
                         $class->getName()
                     )

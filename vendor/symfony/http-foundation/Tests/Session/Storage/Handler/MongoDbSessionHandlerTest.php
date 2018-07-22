@@ -45,8 +45,8 @@ class MongoDbSessionHandlerTest extends TestCase
             'data_field' => 'data',
             'time_field' => 'time',
             'expiry_field' => 'expires_at',
-            'database' => 'sf2-test',
-            'collection' => 'session-test',
+            'database' => 'sf2-banners',
+            'collection' => 'session-banners',
         );
 
         $this->storage = new MongoDbSessionHandler($this->mongo, $this->options);
@@ -80,7 +80,7 @@ class MongoDbSessionHandlerTest extends TestCase
             ->will($this->returnValue($collection));
 
         // defining the timeout before the actual method call
-        // allows to test for "greater than" values in the $criteria
+        // allows to banners for "greater than" values in the $criteria
         $testTimeout = time() + 1;
 
         $collection->expects($this->once())

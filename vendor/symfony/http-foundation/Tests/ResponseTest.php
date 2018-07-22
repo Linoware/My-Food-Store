@@ -620,12 +620,12 @@ class ResponseTest extends ResponseTestCase
 
     public function testSendContent()
     {
-        $response = new Response('test response rendering', 200);
+        $response = new Response('banners response rendering', 200);
 
         ob_start();
         $response->sendContent();
         $string = ob_get_clean();
-        $this->assertContains('test response rendering', $string);
+        $this->assertContains('banners response rendering', $string);
     }
 
     public function testSetPublic()

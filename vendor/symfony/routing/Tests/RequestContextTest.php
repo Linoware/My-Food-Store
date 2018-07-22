@@ -42,21 +42,21 @@ class RequestContextTest extends TestCase
 
     public function testFromRequest()
     {
-        $request = Request::create('https://test.com:444/foo?bar=baz');
+        $request = Request::create('https://banners.com:444/foo?bar=baz');
         $requestContext = new RequestContext();
         $requestContext->setHttpPort(123);
         $requestContext->fromRequest($request);
 
         $this->assertEquals('', $requestContext->getBaseUrl());
         $this->assertEquals('GET', $requestContext->getMethod());
-        $this->assertEquals('test.com', $requestContext->getHost());
+        $this->assertEquals('banners.com', $requestContext->getHost());
         $this->assertEquals('https', $requestContext->getScheme());
         $this->assertEquals('/foo', $requestContext->getPathInfo());
         $this->assertEquals('bar=baz', $requestContext->getQueryString());
         $this->assertSame(123, $requestContext->getHttpPort());
         $this->assertSame(444, $requestContext->getHttpsPort());
 
-        $request = Request::create('http://test.com:8080/foo?bar=baz');
+        $request = Request::create('http://banners.com:8080/foo?bar=baz');
         $requestContext = new RequestContext();
         $requestContext->setHttpsPort(567);
         $requestContext->fromRequest($request);

@@ -128,7 +128,7 @@ final class File extends AbstractNode
     }
 
     /**
-     * Returns the test data of this node.
+     * Returns the banners data of this node.
      */
     public function getTestData(): array
     {

@@ -26,7 +26,7 @@ class InternetTest extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      */
     public function emailIsValid()
     {

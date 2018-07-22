@@ -34,11 +34,11 @@ class ErrorListenerTest extends TestCase
         $logger
             ->expects($this->once())
             ->method('error')
-            ->with('Error thrown while running command "{command}". Message: "{message}"', array('exception' => $error, 'command' => 'test:run --foo=baz buzz', 'message' => 'An error occurred'))
+            ->with('Error thrown while running command "{command}". Message: "{message}"', array('exception' => $error, 'command' => 'banners:run --foo=baz buzz', 'message' => 'An error occurred'))
         ;
 
         $listener = new ErrorListener($logger);
-        $listener->onConsoleError(new ConsoleErrorEvent(new ArgvInput(array('console.php', 'test:run', '--foo=baz', 'buzz')), $this->getOutput(), $error, new Command('test:run')));
+        $listener->onConsoleError(new ConsoleErrorEvent(new ArgvInput(array('console.php', 'banners:run', '--foo=baz', 'buzz')), $this->getOutput(), $error, new Command('banners:run')));
     }
 
     public function testOnConsoleErrorWithNoCommandAndNoInputString()
@@ -62,11 +62,11 @@ class ErrorListenerTest extends TestCase
         $logger
             ->expects($this->once())
             ->method('debug')
-            ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run', 'code' => 255))
+            ->with('Command "{command}" exited with code "{code}"', array('command' => 'banners:run', 'code' => 255))
         ;
 
         $listener = new ErrorListener($logger);
-        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'test:run')), 255));
+        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'banners:run')), 255));
     }
 
     public function testOnConsoleTerminateForZeroExitCodeDoesNotWriteToLog()
@@ -78,7 +78,7 @@ class ErrorListenerTest extends TestCase
         ;
 
         $listener = new ErrorListener($logger);
-        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'test:run')), 0));
+        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'banners:run')), 0));
     }
 
     public function testGetSubscribedEvents()
@@ -98,13 +98,13 @@ class ErrorListenerTest extends TestCase
         $logger
             ->expects($this->exactly(3))
             ->method('debug')
-            ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run --foo=bar', 'code' => 255))
+            ->with('Command "{command}" exited with code "{code}"', array('command' => 'banners:run --foo=bar', 'code' => 255))
         ;
 
         $listener = new ErrorListener($logger);
-        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'test:run', '--foo=bar')), 255));
-        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArrayInput(array('name' => 'test:run', '--foo' => 'bar')), 255));
-        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new StringInput('test:run --foo=bar'), 255));
+        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArgvInput(array('console.php', 'banners:run', '--foo=bar')), 255));
+        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new ArrayInput(array('name' => 'banners:run', '--foo' => 'bar')), 255));
+        $listener->onConsoleTerminate($this->getConsoleTerminateEvent(new StringInput('banners:run --foo=bar'), 255));
     }
 
     public function testCommandNameIsDisplayedForNonStringableInput()
@@ -113,7 +113,7 @@ class ErrorListenerTest extends TestCase
         $logger
             ->expects($this->once())
             ->method('debug')
-            ->with('Command "{command}" exited with code "{code}"', array('command' => 'test:run', 'code' => 255))
+            ->with('Command "{command}" exited with code "{code}"', array('command' => 'banners:run', 'code' => 255))
         ;
 
         $listener = new ErrorListener($logger);
@@ -127,7 +127,7 @@ class ErrorListenerTest extends TestCase
 
     private function getConsoleTerminateEvent(InputInterface $input, $exitCode)
     {
-        return new ConsoleTerminateEvent(new Command('test:run'), $input, $this->getOutput(), $exitCode);
+        return new ConsoleTerminateEvent(new Command('banners:run'), $input, $this->getOutput(), $exitCode);
     }
 
     private function getOutput()

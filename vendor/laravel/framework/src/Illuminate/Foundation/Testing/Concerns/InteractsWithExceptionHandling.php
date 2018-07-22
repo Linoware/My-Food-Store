@@ -53,7 +53,7 @@ trait InteractsWithExceptionHandling
     }
 
     /**
-     * Disable exception handling for the test.
+     * Disable exception handling for the banners.
      *
      * @param  array  $except
      * @return $this

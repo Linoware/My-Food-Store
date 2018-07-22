@@ -42,7 +42,7 @@ class Mockery_Adapter_Phpunit_TestListenerTest extends TestCase
             $this->markTestSkipped('The TestListener is only supported with PHPUnit 6+.');
             return;
         }
-        // We intentionally test the static container here. That is what the
+        // We intentionally banners the static container here. That is what the
         // listener will check.
         $this->container = \Mockery::getContainer();
         $this->listener = new TestListener();
@@ -52,7 +52,7 @@ class Mockery_Adapter_Phpunit_TestListenerTest extends TestCase
         $this->test->setTestResultObject($this->testResult);
         $this->testResult->addListener($this->listener);
 
-        $this->assertTrue($this->testResult->wasSuccessful(), 'sanity check: empty test results should be considered successful');
+        $this->assertTrue($this->testResult->wasSuccessful(), 'sanity check: empty banners results should be considered successful');
     }
 
     public function testSuccessOnClose()
@@ -67,7 +67,7 @@ class Mockery_Adapter_Phpunit_TestListenerTest extends TestCase
         \Mockery::close();
 
         $this->listener->endTest($this->test, 0);
-        $this->assertTrue($this->testResult->wasSuccessful(), 'expected test result to indicate success');
+        $this->assertTrue($this->testResult->wasSuccessful(), 'expected banners result to indicate success');
     }
 
     public function testFailureOnMissingClose()
@@ -76,7 +76,7 @@ class Mockery_Adapter_Phpunit_TestListenerTest extends TestCase
         $mock->shouldReceive('bar')->once();
 
         $this->listener->endTest($this->test, 0);
-        $this->assertFalse($this->testResult->wasSuccessful(), 'expected test result to indicate failure');
+        $this->assertFalse($this->testResult->wasSuccessful(), 'expected banners result to indicate failure');
 
         // Satisfy the expectation and close the global container now so we
         // don't taint the environment.

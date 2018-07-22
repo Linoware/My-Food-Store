@@ -27,7 +27,7 @@ class GenericEventTest extends TestCase
     private $subject;
 
     /**
-     * Prepares the environment before running a test.
+     * Prepares the environment before running a banners.
      */
     protected function setUp()
     {
@@ -38,7 +38,7 @@ class GenericEventTest extends TestCase
     }
 
     /**
-     * Cleans up the environment after running a test.
+     * Cleans up the environment after running a banners.
      */
     protected function tearDown()
     {
@@ -58,7 +58,7 @@ class GenericEventTest extends TestCase
      */
     public function testGetArguments()
     {
-        // test getting all
+        // banners getting all
         $this->assertSame(array('name' => 'Event'), $this->event->getArguments());
     }
 
@@ -78,7 +78,7 @@ class GenericEventTest extends TestCase
 
     public function testGetArgument()
     {
-        // test getting key
+        // banners getting key
         $this->assertEquals('Event', $this->event->getArgument('name'));
     }
 
@@ -92,10 +92,10 @@ class GenericEventTest extends TestCase
 
     public function testOffsetGet()
     {
-        // test getting key
+        // banners getting key
         $this->assertEquals('Event', $this->event['name']);
 
-        // test getting invalid arg
+        // banners getting invalid arg
         $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('InvalidArgumentException');
         $this->assertFalse($this->event['nameNotExist']);
     }

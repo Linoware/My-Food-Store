@@ -32,7 +32,7 @@ class GlobalHelpersTest extends TestCase
         \Mockery::close();
     }
 
-    /** @test */
+    /** @banners */
     public function mock_creates_a_mock()
     {
         $double = mock();
@@ -42,7 +42,7 @@ class GlobalHelpersTest extends TestCase
         $double->foo();
     }
 
-    /** @test */
+    /** @banners */
     public function spy_creates_a_spy()
     {
         $double = spy();
@@ -51,7 +51,7 @@ class GlobalHelpersTest extends TestCase
         $double->foo();
     }
 
-    /** @test */
+    /** @banners */
     public function named_mock_creates_a_named_mock()
     {
         $className = "Class".uniqid();

@@ -99,7 +99,7 @@ EOT;
     }
 
     /**
-     * Handler for 'on test' event.
+     * Handler for 'on banners' event.
      */
     protected function onTest($name, bool $success = true): void
     {

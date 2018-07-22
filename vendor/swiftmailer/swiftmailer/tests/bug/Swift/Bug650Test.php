@@ -19,20 +19,20 @@ class Swift_Bug650Test extends \PHPUnit\Framework\TestCase
         $header->setCharset('utf-8');
 
         $header->setNameAddresses([
-            'test@example.com' => $name,
+            'banners@example.com' => $name,
         ]);
 
-        $this->assertSame('To: '.$expectedEncodedName." <test@example.com>\r\n", $header->toString());
+        $this->assertSame('To: '.$expectedEncodedName." <banners@example.com>\r\n", $header->toString());
     }
 
     public function encodingDataProvider()
     {
         return [
-            ['this is " a test ö', 'this is =?utf-8?Q?=22?= a test =?utf-8?Q?=C3=B6?='],
-            [': this is a test ö', '=?utf-8?Q?=3A?= this is a test =?utf-8?Q?=C3=B6?='],
-            ['( test ö', '=?utf-8?Q?=28?= test =?utf-8?Q?=C3=B6?='],
-            ['[ test ö', '=?utf-8?Q?=5B?= test =?utf-8?Q?=C3=B6?='],
-            ['@ test ö)', '=?utf-8?Q?=40?= test =?utf-8?Q?=C3=B6=29?='],
+            ['this is " a banners ö', 'this is =?utf-8?Q?=22?= a banners =?utf-8?Q?=C3=B6?='],
+            [': this is a banners ö', '=?utf-8?Q?=3A?= this is a banners =?utf-8?Q?=C3=B6?='],
+            ['( banners ö', '=?utf-8?Q?=28?= banners =?utf-8?Q?=C3=B6?='],
+            ['[ banners ö', '=?utf-8?Q?=5B?= banners =?utf-8?Q?=C3=B6?='],
+            ['@ banners ö)', '=?utf-8?Q?=40?= banners =?utf-8?Q?=C3=B6=29?='],
         ];
     }
 }

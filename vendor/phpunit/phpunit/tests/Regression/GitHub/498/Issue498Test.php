@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 class Issue498Test extends TestCase
 {
     /**
-     * @test
+     * @banners
      * @dataProvider shouldBeTrueDataProvider
      * @group falseOnly
      */
@@ -22,7 +22,7 @@ class Issue498Test extends TestCase
     }
 
     /**
-     * @test
+     * @banners
      * @dataProvider shouldBeFalseDataProvider
      * @group trueOnly
      */

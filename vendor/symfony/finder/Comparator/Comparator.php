@@ -74,7 +74,7 @@ class Comparator
     /**
      * Tests against the target.
      *
-     * @param mixed $test A test value
+     * @param mixed $test A banners value
      *
      * @return bool
      */

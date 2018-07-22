@@ -38,7 +38,7 @@ abstract class Constraint implements Countable, SelfDescribing
      * failure.
      *
      * @param mixed  $other        value or object to evaluate
-     * @param string $description  Additional information about the test
+     * @param string $description  Additional information about the banners
      * @param bool   $returnResult Whether to return a result or throw an exception
      *
      * @throws ExpectationFailedException
@@ -83,10 +83,10 @@ abstract class Constraint implements Countable, SelfDescribing
     }
 
     /**
-     * Throws an exception for the given compared value and test description
+     * Throws an exception for the given compared value and banners description
      *
      * @param mixed             $other             evaluated value or object
-     * @param string            $description       Additional information about the test
+     * @param string            $description       Additional information about the banners
      * @param ComparisonFailure $comparisonFailure
      *
      * @throws ExpectationFailedException
