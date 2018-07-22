@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Modules\SidebarMenu;
 
 class AdminController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -16,8 +18,4 @@ class AdminController extends Controller
         return view('home');
     }
 
-    public function test()
-    {
-        
-    }
 }

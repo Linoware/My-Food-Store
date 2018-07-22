@@ -17,4 +17,10 @@
 
 Route::Auth();
 Route::get('/','AdminController@index');
+Route::get('/map','MapController@index');
+
+Route::prefix('item')->group(function () {
+    Route::get('list', 'ItemController@index');
+    Route::get('create', 'ItemController@create');
+});
 
