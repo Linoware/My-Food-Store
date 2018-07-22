@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\ApiBaseController;
 use Illuminate\Http\Request;
-use App\Http\Modules\JsonResponseFormat;
 
 
-class OrderController extends Controller
+class OrderController extends ApiBaseController
 {
-	use JsonResponseFormat;
+	// use JsonResponseFormat;
 
-	public function create()
+	public function create(Request $request)
 	{
-		// $data = $this->jsonformat(false,['error_code' => 1, 'error_message' => 'Authentication failed'],'profiles',null, $token);
-		$data = [
-			'key' => 'value',
-		];
+
+		$token = $request->header('Authorization');
+
+		$customer = $this->auth($token);
+		if ($customer['status']) {
+			$data = $this->jsonformat(true, null,'customer',null, $token);
+		} else {
+			$data = $this->jsonformat(false,['error_code' => 1, 'error_message' => $customer['message']],'customer',null, null);
+		}
 
 		return response()->json($data, 401);
 	}
