@@ -28,4 +28,13 @@ class Item extends Model
         $product_size = DB::table('product_sizes')->get();
         return $product_size;
     }
+
+    public static function getBrands()
+    {
+        $items = DB::table('brands as b')
+            ->join('currencies as c','b.currency_id','=','c.currency_id')
+            ->join('countries as co','b.country_id','=','co.country_id')
+            ->get();
+        return $items;
+    }
 }

@@ -109,7 +109,7 @@
 <script src="{{ asset('assets/js/demo.js') }}"></script>
 <script src="{{ asset('assets/js/tables_bootstrap-table.js') }}"></script>
 <script src="{{ asset('assets/js/ui_notifications.js') }}"></script>
-{{--<script src="{{ asset('assets/js/forms_file-upload.js') }}"></script>--}}
+<script src="{{ asset('assets/js/forms_file-upload.js') }}"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcP4MZGw0_jQraC-Hv5nO1kDNS7DgOTo&callback=initMap" async defer></script>--}}
 </body>
 
