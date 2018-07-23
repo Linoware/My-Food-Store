@@ -27,10 +27,14 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/theme-corporate.css') }}" class="theme-settings-theme-css">
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/colors.css') }}" class="theme-settings-colors-css">
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/uikit.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/dropzone/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/flow-js/flow.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
     <!-- Libs -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/bootstrap-table/bootstrap-table.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/growl/growl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/toastr/toastr.css') }}">
 
     <script src="{{ asset('assets/vendor/js/material-ripple.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/layout-helpers.js') }}"></script>
@@ -38,6 +42,7 @@
     <!-- Core scripts -->
     <script src="{{ asset('assets/vendor/js/pace.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- Libs -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
@@ -93,13 +98,18 @@
 <script src="{{ asset('assets/vendor/libs/bootstrap-table/bootstrap-table.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/bootstrap-table/extensions/export/export.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/sidenav.js') }}"></script>
-
+<script src="{{ asset('assets/vendor/libs/dropzone/dropzone.js') }}"></script>
+<script src="{{ asset('assets/vendor/libs/flow-js/flow.js') }}"></script>
+<script src="{{ asset('assets/vendor/libs/growl/growl.js') }}"></script>
+<script src="{{ asset('assets/vendor/libs/toastr/toastr.js') }}"></script>
 <!-- Libs -->
 <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
 <!-- Demo -->
 <script src="{{ asset('assets/js/demo.js') }}"></script>
 <script src="{{ asset('assets/js/tables_bootstrap-table.js') }}"></script>
+<script src="{{ asset('assets/js/ui_notifications.js') }}"></script>
+{{--<script src="{{ asset('assets/js/forms_file-upload.js') }}"></script>--}}
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcP4MZGw0_jQraC-Hv5nO1kDNS7DgOTo&callback=initMap" async defer></script>--}}
 </body>
 

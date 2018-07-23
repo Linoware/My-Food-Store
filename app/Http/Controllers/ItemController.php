@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\common;
 use App\Item;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('items.index');
+        $items = Item::getItemList();
+        return view('items.index',compact('items'));
     }
 
     /**
@@ -22,9 +24,19 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $item_types = Item::getItemType();
+        $product_sizes = Item::getProductSize();
+
+        if($request->type == 1){
+            $view = 'single_item_form';
+        }else if($request->type == 2){
+            $view = 'group_item_form';
+        }
+
+        return view('items.'.$view,compact('item_types','product_sizes'));
+
     }
 
     /**
