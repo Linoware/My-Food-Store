@@ -69,8 +69,8 @@
     function addItemInfo(type, value){
         axios.post('/item/add_info',
             {
-                type: 'info', data: {
-                    item_name: value
+                type: type, data: {
+                    value: value
                 }
             })
             .then((res)=>{
@@ -150,5 +150,29 @@
             '<tr>' +
             '<td>Crust</td><td>Thin & Crispy</td><td><input type="checkbox" checked value="1"> </td>' +
             '</tr>');
+    }
+
+    function addIngredient(type, value){
+        axios.post('/item/edit_item_price',
+            {
+                type: type,
+                value: value
+            })
+            .then((res)=>{
+
+                $('#form-container .card-body').html(res.data);
+            })
+    }
+
+    function addIngredientCilde(type, value){
+        axios.post('/item/edit_item_price',
+            {
+                type: type,
+                value: value
+            })
+            .then((res)=>{
+
+                $('#form-container .card-body').html(res.data);
+            })
     }
 </script>

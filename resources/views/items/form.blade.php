@@ -50,7 +50,7 @@
 
     <div class="card-body"></div>
 </div>
-    @include('items.modal', array('title' => 'Add Ingredient Levels', 'modal_id' => 'ingredient-level'))
+    @include('items.modal', array('title' => 'Add Ingredient Levels', 'modal_id' => 'ingredient-level', 'modal_body' => 'items.ingredient_level_form'))
     @include('items.script')
 @endsection
 

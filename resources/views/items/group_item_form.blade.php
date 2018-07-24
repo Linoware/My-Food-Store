@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <div class="form-group col-md-10">
                         <label class="form-label">Item Name</label>
-                        <input type="text" class="form-control" name="item_name">
+                        <input type="text" class="form-control" name="item_name" value="{{ Session::get('item_name') }}" onchange="addItemInfo('item_name', event.target.value)">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -17,7 +17,7 @@
                         <label class="form-label">Item Price</label>
                         <div class="input-group">
 
-                            <input type="number" step="0.01" class="form-control" name="item_price">
+                            <input type="number" step="0.01" class="form-control" name="item_price" value="{{ Session::get('item_price') }}" onchange="addItemInfo('item_price', event.target.value)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">$</span>
                             </div>
@@ -61,7 +61,7 @@
         <div class="form-row col-sm-12 ml-2">
             <div class="form-group col-sm-12">
                 <label class="form-label">Item Description</label>
-                <textarea name="item_description" class="form-control" rows="3" ></textarea>
+                <textarea name="item_description" class="form-control" rows="3" onchange="addItemInfo('item_description', event.target.value)">{{ Session::get('item_description') }}</textarea>
             </div>
         </div>
     </div>

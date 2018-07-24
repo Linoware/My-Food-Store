@@ -84,6 +84,8 @@ class ItemController extends Controller
                 Session::forget('item_image');
             }
 
+        }else{
+            Session::put($request->type, $request->data['value']);
         }
 
         $view = $request->session()->get('item_type')['view'];

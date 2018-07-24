@@ -71,11 +71,11 @@ class CustomerController extends Controller
 
                 $customer_token->save();
 
-                $profiles = Customer::all();
 
-                $profiles[0]['last_login_date'] = $this->utcToLocalDateTime($profiles[0]['last_login_date'], $request['time_zone']);
 
-                $response = $this->jsonformat(true,['error_code' => 0, 'error_message' => 'authentication success'],'profiles', $profiles[0], $token);
+                $profiles[0]['last_login_date'] = $this->utcToLocalDateTime($customer_token['last_login_date'], $request['time_zone']);
+
+                $response = $this->jsonformat(true,['error_code' => 0, 'error_message' => 'authentication success'],'profiles', $customer_token, $token);
 
             }
         }else{
@@ -112,11 +112,9 @@ class CustomerController extends Controller
 
                 $customer_token->save();
 
-                $profiles = Customer::all();
+                $profiles[0]['last_login_date'] = $this->utcToLocalDateTime($customer_token['last_login_date'], $request['time_zone']);
 
-                $profiles[0]['last_login_date'] = $this->utcToLocalDateTime($profiles[0]['last_login_date'], $request['time_zone']);
-
-                $response = $this->jsonformat(true,['error_code' => 0, 'error_message' => 'authentication success'],'profiles',$profiles[0], $token);
+                $response = $this->jsonformat(true,['error_code' => 0, 'error_message' => 'authentication success'],'profiles',$customer_token, $token);
 
             }
         }else{
@@ -136,6 +134,7 @@ class CustomerController extends Controller
         $customer = Customer::where('remember_token',$token)->first();
 
         if(!empty($customer)){
+
             $customer->customer_full_name = $request['customer_full_name'];
             $customer->customer_email = $request['customer_email'];
             $customer->customer_photo = $request['customer_photo'];
