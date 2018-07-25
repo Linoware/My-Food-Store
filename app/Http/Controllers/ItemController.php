@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\common;
+use App\Http\Modules\JsonResponseFormat;
 use App\Item;
 use Illuminate\Http\Request;
 use App\Http\Modules\FrontEndHelper;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 
 class ItemController extends Controller
 {
-    use FrontEndHelper;
+    use FrontEndHelper, JsonResponseFormat;
     /**
      * Display a listing of the resource.
      *
@@ -163,9 +164,24 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show($item_id)
     {
-        //
+
+        $items = array(
+          'item_type' => 'Single,',
+          'item_price' => 1.5,
+          'item_size' => array(
+              array('size_name' => 'small', 'size_default' => false),
+              array('size_name' => 'medium', 'size_default' => true),
+              array('size_name' => 'large', 'size_default' => false),
+          )
+        );
+
+        $items = (new Item)->getItemById($item_id);
+
+        $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'Request success'],$items);
+
+        return response()->json($response);
     }
 
     /**

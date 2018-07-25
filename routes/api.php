@@ -20,3 +20,8 @@ Route::resource('customers', 'CustomerController');
 
 // Order api
 Route::post('customer_create_order', 'OrderController@create');
+
+// Item api
+Route::group(['prefix' => 'item'], function($router){
+   Route::post('view/{id}', 'ItemController@show');
+});
