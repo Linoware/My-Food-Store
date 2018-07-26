@@ -10,7 +10,7 @@ class Brands extends Model
 {
     protected $table = "brands";
 
-    protected $primaryKey = "banner_id";
+    protected $primaryKey = "brand_id";
 
     protected $fillable = [
 

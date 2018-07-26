@@ -167,16 +167,6 @@ class ItemController extends Controller
     public function show($item_id)
     {
 
-        $items = array(
-          'item_type' => 'Single,',
-          'item_price' => 1.5,
-          'item_size' => array(
-              array('size_name' => 'small', 'size_default' => false),
-              array('size_name' => 'medium', 'size_default' => true),
-              array('size_name' => 'large', 'size_default' => false),
-          )
-        );
-
         $items = (new Item)->getItemById($item_id);
 
         $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'Request success'],$items);

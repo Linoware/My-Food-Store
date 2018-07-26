@@ -37,7 +37,7 @@ class CustomerController extends Controller
             if(empty($customer_exist)){
 
                 $customer_data['customer_phone_number'] = $request['customer_phone_number'];
-                $customer_data['customer_code'] = $customer_code;
+//                $customer_data['customer_code'] = $customer_code;
                 $customer_data['country_id'] = $country_id['country_id'];
                 $customer_data['country_code'] = $request['country_code'];
                 $customer_data['password'] = bcrypt($request['password']);

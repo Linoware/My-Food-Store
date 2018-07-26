@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Restaurant;
 use Illuminate\Http\Request;
+use App\Brands;
 use App\Http\Modules\JsonResponseFormat;
 
-class RestaurantController extends Controller
+class BrandController extends Controller
 {
 
     use JsonResponseFormat;
@@ -44,14 +45,16 @@ class RestaurantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Restaurant  $restaurant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($restaurant_id)
+    public function show($id)
     {
-        $restaurants = (new Restaurant())->getRestaurantById($restaurant_id);
+        $brands = Brands::find($id);
+        $brands->today = Restaurant::getWorkDayOfWeek($id);
+        $brands->open = ['data' => [Restaurant::getOpenCloseTime($id)]];
 
-        $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'Request success'],$restaurants);
+        $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'Request success'],$brands);
 
         return response()->json($response);
     }
@@ -59,10 +62,10 @@ class RestaurantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Restaurant  $restaurant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurant $restaurant)
+    public function edit($id)
     {
         //
     }
@@ -71,10 +74,10 @@ class RestaurantController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Restaurant  $restaurant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Restaurant $restaurant)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,10 +85,10 @@ class RestaurantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Restaurant  $restaurant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Restaurant $restaurant)
+    public function destroy($id)
     {
         //
     }

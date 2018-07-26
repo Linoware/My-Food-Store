@@ -25,3 +25,7 @@ Route::post('customer_create_order', 'OrderController@create');
 Route::group(['prefix' => 'item'], function($router){
    Route::post('view/{id}', 'ItemController@show');
 });
+
+Route::group(['prefix' => 'brand'], function($router){
+    Route::post('view/{id}', 'BrandController@show');
+});
