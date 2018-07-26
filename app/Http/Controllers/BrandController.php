@@ -51,8 +51,10 @@ class BrandController extends Controller
     public function show($id)
     {
         $brands = Brands::find($id);
-        $brands->today = Restaurant::getWorkDayOfWeek($id);
-        $brands->open = ['data' => [Restaurant::getOpenCloseTime($id)]];
+        $open = Restaurant::getOpenCloseTime($id);
+        $today = Restaurant::getWorkDayOfWeek($id);
+        $brands->today = $today;
+        $brands->open = array('data' => !empty($open) ? $open : array());
 
         $response = $this->jsonDataFormat(true,['error_code' => 0, 'error_message' => 'Request success'],$brands);
 

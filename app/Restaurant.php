@@ -20,7 +20,11 @@ class Restaurant extends Model
     {
         $today = DB::table('view_restaurant_workdays')->where('restaurant_id', $restaurant_id)->first();
 
-        return $today->workday_name;
+        if(!empty($today)){
+            return $today->workday_name;
+        }else{
+            return array();
+        }
     }
 
     public static function getOpenCloseTime($restaurant_id)
